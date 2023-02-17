@@ -34,14 +34,19 @@ BROADCAST:
     esto se usa para tener cables backup que ya estén coenctados, es decir, que si se rompe uno automaticamnete ya tiene el camino disponible
     se recalcula cuandos se modifica la topología
     y mientras que se recalcula se detiene el envío de datos por toda la red 
-    1  spanning tree(STP): 
+    1.  spanning tree(STP): 
       la convergencia es lenta ~ 30 segundos (mucho)
-    2 Rapid SpanningTree (RSTP):
+    2. Rapid SpanningTree (RSTP):
       convergencia es rapida que da susto
     
     Estos dos protocolos admiten una única instancia de spanning tree para toda la tipología
 
-    [los servidores sonde 4 a 6 cifras]
+    [los servidores sonde 4 a 6 cifras, esto es por algo relacionado con que para evitar que estén aprados o algo así, no lo entendí muy bien]
 
-
+    3. Multiple Spanning Tree(MSTP):
+      es rapido que da susto
+      permite varias instancias de spanning tree
+      solo se puede hacer cunado hay varios VLANs
+    
+    
 
