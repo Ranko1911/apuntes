@@ -50,3 +50,30 @@ servicio orientado a conexión-
 en los dos casos se llega al final
 aliexpress -> servicio no orientado a conexión
 transferencia de ficheros -> servicio orientado a conexion
+
+ahora está el pdf de la tarea en el portal, ya no es tan al aire
+se recomienda nombrar a los archivos como esta plantilla:
+  - "nombre" - "breve descripcion"
+  ejemplo:
+    ADSL - wikipedia
+    ADSL - introcuccion
+
+*la fibra no es una tecnología, es un emdio de transmision*
+
+Plantilla de Guión: (propuesta del alumnado)
+  Indice
+  Resumen
+  MarcoTeórico
+  Planteamiento
+  Objetivos
+  Desarrollo
+    [Cambios]
+  Conclusion
+  Bibliografía
+  Nexos
+
+Autentica plantilla(propuesta del profesor):
+  intro
+  planteame el problema
+  solucion del problema
+  conclusion
