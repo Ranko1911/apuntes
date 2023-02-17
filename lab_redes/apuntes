@@ -41,12 +41,14 @@ BROADCAST:
     
     Estos dos protocolos admiten una única instancia de spanning tree para toda la tipología
 
-    [los servidores sonde 4 a 6 cifras, esto es por algo relacionado con que para evitar que estén aprados o algo así, no lo entendí muy bien]
+    #los servidores sonde 4 a 6 cifras, esto es por algo relacionado con que para evitar que estén aprados o algo así, no lo entendí muy bien
 
     3. Multiple Spanning Tree(MSTP):
       es rapido que da susto
       permite varias instancias de spanning tree
-      solo se puede hacer cunado hay varios VLANs
+      solo se puede hacer cunado hay varios VLANs, si no no hay multiples instancias de spannig tree
+      se pueden hacer agrupaciones de VLANs -> 20,30 son dos VLANs pero son una aprupación a y 40 es otra agrupacion b y otra VLAN
     
+    el psanning tree se hace sobre el dominio de broadcast
     
 
