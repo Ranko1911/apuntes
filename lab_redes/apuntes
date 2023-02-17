@@ -51,4 +51,13 @@ BROADCAST:
     
     el psanning tree se hace sobre el dominio de broadcast
     
+    al principio de la comunicacion se mandan paquetes de 64 bits, 48 de estos sond e la dirección MAC, los otros 16 se parten en 2, 4 bits para la prioridad 
+    12 para la ID extendido. El apquete se llama BID
+
+    Por defecto los 4 bits están puestos a 1111, son absolutamente todos iguales.
+    Raíz: el switch con BID menor, [el de arriba en el arbol de switch], se pone en el CORE.
+
+    existen switches d eacceso, distribución y CORE, están mencionados de abajoa  arriba en el árbol
+    
+
 
