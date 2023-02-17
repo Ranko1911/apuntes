@@ -17,7 +17,7 @@ BROADCAST:
 
   si haces un ciclo CAGASTE, porque el rendimiento de la red baja drásticamente
 
-  la tormenta se identifica si hay una locura de brillos en el switch
+  la tormenta se identifica si hay una locura de brillos en el switch  
 
   La solucion está en los protocoles spannig-tree ( arbol generador¿)
   SPANNIG-TREE:
@@ -32,5 +32,16 @@ BROADCAST:
 
     el arbol resultante es el que se tiene en cuenta para hacer los envíos
     esto se usa para tener cables backup que ya estén coenctados, es decir, que si se rompe uno automaticamnete ya tiene el camino disponible
+    se recalcula cuandos se modifica la topología
+    y mientras que se recalcula se detiene el envío de datos por toda la red 
+    1  spanning tree(STP): 
+      la convergencia es lenta ~ 30 segundos (mucho)
+    2 Rapid SpanningTree (RSTP):
+      convergencia es rapida que da susto
     
+    Estos dos protocolos admiten una única instancia de spanning tree para toda la tipología
+
+    [los servidores sonde 4 a 6 cifras]
+
+
 
