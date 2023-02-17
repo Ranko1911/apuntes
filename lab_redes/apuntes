@@ -1,0 +1,18 @@
+VLAN separa la topología logica de la física
+Surgen para acotar dominios de broadcast
+  dominio de broadcast -> todos los dispositivos conetados a la area local
+
+BROADCAST:
+  las topologías de switch se hacaen en forma de arbol y
+  se puede poner un cierto grado de redundancia ( varias conexiones multiples, multiples caminos entre todos)
+  por esto va a tener enlaces duplicados y dispositivos duplicados
+  se introducen los ciclos, lo que produce un efecto negativo dentro de la topología
+
+  Ejemplo: 
+    Dipositivo 1 conectado a switch 1, switch1 y 2 conectados
+    si dispositivo 1 hace broadcast le llega a si mismo otra vez
+  
+  la trama broadcast se reenvía por todos los puertos excepto por el que entró
+  este problema se llama "tormenta de broadcast"
+
+  si haces un ciclo CAGASTE, porque el rendimiento de la red baja drásticamente
