@@ -16,3 +16,21 @@ BROADCAST:
   este problema se llama "tormenta de broadcast"
 
   si haces un ciclo CAGASTE, porque el rendimiento de la red baja drásticamente
+
+  la tormenta se identifica si hay una locura de brillos en el switch
+
+  La solucion está en los protocoles spannig-tree ( arbol generador¿)
+  SPANNIG-TREE:
+    esto va con grafos, nada de aparatos
+    se genera un árbol a aprtir de un nodo inicial
+    a partir de las aristas de ese nodo, y así sucesivamente
+    EJEMPLO:
+      5 nodos conectados entre sí (1 con 2,3,4 | 2 con 1,4,5 | 3 con 1,4 | 4 con 1,2,3,5 | 5 con 2,4)
+      empezando en nodod raiz (n1), se genera el arbol inicial
+      n1 -> n2 ,n3 ,n4
+      n2 -> n5
+
+    el arbol resultante es el que se tiene en cuenta para hacer los envíos
+    esto se usa para tener cables backup que ya estén coenctados, es decir, que si se rompe uno automaticamnete ya tiene el camino disponible
+    
+
