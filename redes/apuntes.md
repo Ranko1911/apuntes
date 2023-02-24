@@ -107,3 +107,5 @@ B)
   - la carga de una red depende del numero de nodos activos
   - la carga de una red depende del método de acceso empleado
   - el empeño de las diferentes protocolos de comunicaciones esta limitado por el valot de MTU
+
+  (este señor dice tanto y yo entiendo tan poco que da miedo)
