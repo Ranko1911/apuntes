@@ -58,7 +58,7 @@ se recomienda nombrar a los archivos como esta plantilla:
     ADSL - wikipedia
     ADSL - introcuccion
 
-*la fibra no es una tecnología, es un emdio de transmision*
+*la fibra no es una tecnología, es un medio de transmision*
 
 Plantilla de Guión: (propuesta del alumnado)
   Indice
@@ -83,3 +83,27 @@ AL hombre le gusta más la calidad del conocimiento más que la cantidad del con
 las diferencia entre las voces en las llamadas de telefono es porque lo que se busca es al comunición rápida y eficaz, no una
 comunicación "perfecta", porque hacerla "perfecta", costaría mucho dinero
 
+HA LLEGADO 
+
+Codificación en Redes
+no se que están diciendo, porque hablan bajito y el eco no ayuda
+hay 2 motivos por los que hay que codificar, pero no los he escuchado:
+- motivo 1: tienes el reloj en la señal
+- motivo 2: estresa el medio
+implicaiones de una seña acelerada: más latigazos, puede provocar algún problema
+
+Literalmente pregunta de examen:
+A)
+  - el ATM es un protocolo exclusivo de nivel 3  // es un protocolo, esta está bien seguro
+  - es posible multiplexar a nivel de transporte // el profe dice que si se puede 
+  - el nivel de transporte no controla errores //
+  - los niveles 2 y 3 han de estar presentes en una comunicaión. //
+  - una MAN no puede ser parte  de un WAN //
+
+se dice que solo es la 2 verdadera y que la 2 y 4 son verdaderas
+
+B)
+  - la carga de una red no depende de la topología de la misma
+  - la carga de una red depende del numero de nodos activos
+  - la carga de una red depende del método de acceso empleado
+  - el empeño de las diferentes protocolos de comunicaciones esta limitado por el valot de MTU
