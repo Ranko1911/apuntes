@@ -77,3 +77,9 @@ Autentica plantilla(propuesta del profesor):
   planteame el problema
   solucion del problema
   conclusion
+
+AL hombre le gusta más la calidad del conocimiento más que la cantidad del conocimiento
+
+las diferencia entre las voces en las llamadas de telefono es porque lo que se busca es al comunición rápida y eficaz, no una
+comunicación "perfecta", porque hacerla "perfecta", costaría mucho dinero
+

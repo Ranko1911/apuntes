@@ -61,3 +61,88 @@ BROADCAST:
     
 
 
+# enrutamiento
+  - Pasarela interioir
+      - Enrutamiento dentro del sistema autonomo 
+        - RIP 
+            - basado en vectores de didstancia
+            - la metrica se bas en el numero de saltos
+            - tiene un limite de 15 saltos
+            - Lento con ganas
+          Había 3 versiones d eRIP:
+            - RIP: enrutamiento con clases
+            - RIPv2: enrutamiento sin clases
+            - RIPng: 
+        -  OSPF
+            - basado en estados de enlace
+            - la metrica se basa en ancho de banda*
+            - no tiene limite de saltos 
+            - rápida convergencia
+            - escalable
+          - versiones:
+            - OSPF:enrutamiento con clase, ipv4
+            - OSPFv2: enrutamiento sin clases, ipv4
+            - OSPFv3: 
+        Lo que se busca cuando se pasa de RIP a OSPF es la escalabilidad
+  - pasarela exterior
+      Enrutamiento entre sistemas autonomos
+        -  BGP
+            - _literalmente no apuntó nada_
+
+
+  OSPF:
+    su principal objetivo es la escalabilidad
+
+    - mapa de redes:
+      son 3 subredes de 3 routers con una maquina cada uno, conectados por un router externo (exepto uno de ellos, uno de llos usa uno de sus propios routers)
+      
+      ![busca una foto en el movil que se parezca a esto, el día que se añadió estos apuntes]()
+      - RIB
+        - Info base:
+          - Tabla de enrutemiento
+    
+    Area: es un conjunto, que pueden estar o no en un espacio de direccionamiento "continuo?", manejan muy bien los agrupamientos
+    en el ejemplo descrito arriba deberían ser 4 areas (1 para cada sub-red y 1 para la conexion de sub-redes)
+
+    - Areas OSPF:
+      - troncal
+        - su mision es interconectar otras areas
+        - es el area 0, otro identificador significa que no es troncal
+        - es **obligatorio** que exista un area 0 en una topología OSPF.
+        - puede ser que sea muy chiquita, pues entonces minimo necesitas la 0 (no te libras de hacer la troncal, por algo se llama troncal)
+      - standard
+        - entran tipos de mansaje 3,4,5
+      - stub
+        - los tipos 3 pasan sin problema, pero lo externo al ospf, nodentran y se cambian por una ruta por defecto 
+      - totally stub
+        - no permite ni la entrada de mensajes tipo 3
+        - entra un tipo 3 , sa cambia por una ruta por defecto
+      - NSSA (NOT SO STABLE AREA)
+        - 
+
+    - Tipos de routersopf(es una clasificacion de lo que te puedes encontrar):
+      - router troncal
+        - que tiene nodos del area 0
+      - router interno
+        - que está conectado a un solo area
+      - router fronterizo de area (ABR)
+        - conectado a más d eun area
+      - router fronterizo de sistemas autonomos(ASBR)
+        - Está conectado con un router que no es de OSPF
+
+      - Tipos de mensajes de estado de enlace: **tutoría para esto?**
+        -  tipo 1: tipo router
+          -  mision: recopilar informacion si es posible y enviarsela a sus vecinos 
+        -  tipo 2: tipo network
+          -  mision: recopilar informacion si es posible y enviarsela a sus vecinos
+        - tipo 3: Summary
+          - hace una agrupación?
+        - tipo 4: ASBR router
+        - tipo 5: external network
+        - tipo 6: son los padres
+        - tipo 7: external network 2?
+          - se traduce a un tipo 5 en caso de que el quieras que algo pase del asbr no troncal
+        PAra evitar los broadcast tochos, se hace uno muy intelligente, se desinaga un router como un reouter designado, el tipo 2 se aprende las "coas " y lo copio a la
+        --- , vamos que agrupa para enviarlos datos ___.
+
+
