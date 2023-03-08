@@ -1,6 +1,11 @@
 puntos a completar en la prat 3:
 la entrada: pide como entrada el satelite (entero entre 1 y 32)
 longitud de la salida cifrante (n de bits de salida a devolver) 
-(ña ultima columna)
+(la ultima columna)
 
-genere ala secuencia cifrante
+genere a la secuencia cifrante
+
+_______________________________
+
+Los datos se manejan con array de 1 y 0
+operar con xor logico
