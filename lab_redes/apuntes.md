@@ -8,7 +8,7 @@ BROADCAST:
   por esto va a tener enlaces duplicados y dispositivos duplicados
   se introducen los ciclos, lo que produce un efecto negativo dentro de la topología
 
-  Ejemplo: 
+  Ejemplo:
     Dipositivo 1 conectado a switch 1, switch1 y 2 conectados
     si dispositivo 1 hace broadcast le llega a si mismo otra vez
   
@@ -58,37 +58,35 @@ BROADCAST:
     Raíz: el switch con BID menor, [el de arriba en el arbol de switch], se pone en el CORE.
 
     existen switches d eacceso, distribución y CORE, están mencionados de abajoa  arriba en el árbol
-    
-
 
 # enrutamiento
-  - Pasarela interioir
-      - Enrutamiento dentro del sistema autonomo 
-        - RIP 
-            - basado en vectores de didstancia
-            - la metrica se bas en el numero de saltos
-            - tiene un limite de 15 saltos
-            - Lento con ganas
+
+- Pasarela interioir
+  - Enrutamiento dentro del sistema autonomo
+    - RIP
+      - basado en vectores de didstancia
+      - la metrica se bas en el numero de saltos
+      - tiene un limite de 15 saltos
+      - Lento con ganas
           Había 3 versiones d eRIP:
-            - RIP: enrutamiento con clases
-            - RIPv2: enrutamiento sin clases
-            - RIPng: 
-        -  OSPF
-            - basado en estados de enlace
-            - la metrica se basa en ancho de banda*
-            - no tiene limite de saltos 
-            - rápida convergencia
-            - escalable
-          - versiones:
-            - OSPF:enrutamiento con clase, ipv4
-            - OSPFv2: enrutamiento sin clases, ipv4
-            - OSPFv3: 
+      - RIP: enrutamiento con clases
+      - RIPv2: enrutamiento sin clases
+      - RIPng:
+    - OSPF
+      - basado en estados de enlace
+      - la metrica se basa en ancho de banda*
+      - no tiene limite de saltos
+      - rápida convergencia
+      - escalable
+    - versiones:
+      - OSPF:enrutamiento con clase, ipv4
+      - OSPFv2: enrutamiento sin clases, ipv4
+      - OSPFv3:
         Lo que se busca cuando se pasa de RIP a OSPF es la escalabilidad
-  - pasarela exterior
+- pasarela exterior
       Enrutamiento entre sistemas autonomos
         -  BGP
             - _literalmente no apuntó nada_
-
 
   OSPF:
     su principal objetivo es la escalabilidad
@@ -145,4 +143,44 @@ BROADCAST:
         PAra evitar los broadcast tochos, se hace uno muy intelligente, se desinaga un router como un reouter designado, el tipo 2 se aprende las "coas " y lo copio a la
         --- , vamos que agrupa para enviarlos datos ___.
 
+<!-- ------------------------ -->
+falta una clase por medio
+<!-- ------------------------ -->
 
+BGP  border GateAway Protocol -> se puede aplicar el protocolo a nivel mundial
+
+- sistema autonomo
+  en internet se hace una busqueda de caminos entre sistemas autonomos
+
+tipos de sistemas autonomos:
+  Stub: solo conectado con otro autonomo
+  transito: se conecta a varios y permite que otros sistemas lo usen como él
+  Multihomed: está cpnectado a varios, pero no permite que lo usen de canal
+  internet: Exchange Point: está asociado a una infreestructura física
+
+tipos de mensajes:
+  -
+  -
+  -
+  -
+
+Sesiones BGP:
+  eBGP: routers de distinto AS ( Sisteam autonomo )
+  iBGP: routers de igual AS 
+
+  eBGP: ejemplo de sesion eBGP
+    router bgp 100
+    neigbour 7.7.7.10 remote-aS 200
+
+    router bgp 200
+    neigbour 7.7.7.9 remote-aS 100
+
+    ATENCIÓN: esto y los cables son cosas diferentes
+
+    vecindades dinamicas
+    prefijos de red
+    atributos de los mensajes de actualizacion BGP
+      - origin
+      - as-path
+      - next-hop
+      - local-pref
