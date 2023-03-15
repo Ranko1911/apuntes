@@ -1,3 +1,7 @@
+npm init --yes
+
+----------- creamos el package.json
+
 
 npm install --save-dev typedoc
 
