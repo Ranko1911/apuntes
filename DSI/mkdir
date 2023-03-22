@@ -1,0 +1,14 @@
+#!/bin/bash
+
+npm init --yes
+npm install --global typescript
+tsc --init
+npm install --save-dev tsc-watch
+npm i -g eslint
+eslint --init
+npm i --save-dev prettier eslint-config-prettier
+echo {} > .prettierrc.json
+npx prettier --write .
+npm install --save-dev typedoc
+npm install --save-dev mocha chai @types/mocha @types/chai ts-node
+npm install --save-dev nyc coveralls
