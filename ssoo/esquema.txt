@@ -1,0 +1,406 @@
+B1
+Parte 1 - INTRODUCCION
+	Tipos de SSOO
+		Mainframne
+			Por lotes
+			Multiprogramados
+			Tiempo compartido
+		Escritorio
+		Mano
+		Multiprocesador
+		Distribuidos
+			cliente-servidor
+			redes-iguales
+			sis op para sis distribuidos
+		Clúster
+		Tiempo real
+Parte 2 - Organización de los sistemas operativos
+	Componentes del Sistema
+		Gestion de procesos
+		Gestion de memoria principal
+		Gestión del sistema de E/S
+			Buffering - Caching - Spooling
+		Gestión del almacenamientop secundario 
+		Gestion del sistema de archivos
+		Gestión de Red
+		Protección y Seguridad
+	Servicios el Sistema
+		Servicios que garantizan el funcionamiento eficiente del sistema
+			Asignación de recursos
+			Monitorizacion
+			Proteccion y Seguridad
+		Servicios útiles para el usuario
+			Interfaz de Usuariio
+			Operaciones de E/S
+			Manipulacuion de Sistema de archivos
+			Comunicaciones
+			Detección de erroes
+		Interfaz del usuario
+			Línea / Interprete de Comandos
+			Procesos por lotes
+			Interfaz gráfica de usuario ( GUI )
+	Interfaz de programacion de aplicaciones
+		Interfaces de programacion de aplicaciones
+			Windows API - POSIX 
+		Llamadas al sistema
+			Invocar llamadas al sistema
+			Paso de argumentos
+				Mediante registros de la CPU
+				Mediante tabla de memoria
+				Mediante la pila del proceso
+		Librería del sistema
+		Librería estándar
+		Todas las piezas juntas
+	Operacion del sistema operativo
+		Software controlado mediante interrupciones
+		Operacion en modo dual
+			Modos de operacion ( Usuario - Privilegiado )
+			Ejecucion de instrucciones
+		Proteccion de la memoria
+		El temporizador
+		Maquinas virtuales
+		Arranque del sistema
+			Tareas del bootstrap
+				Diagnostico de la maquina
+				Inicializar el sistema
+				Iniciar el sistema operativo
+			Arranque de sistema UNIX
+	Sistemas operativos por su estructura
+		Estructura Sencilla ( MS-DOS | UNIX )
+		Estructura en capas
+			Dificultades del diseño
+		Microkernel
+			Rendimiento 
+		Estructura Modular
+Parte 3 - Gestión de procesos
+	Procesos
+		El proceso 
+			Seg de código
+			Seg de datos
+			Seg BBS ( variables )
+			Pila
+			montón
+			Info sobre el estado actual de ejecución
+		Estados de los procesos
+			Nuevo
+			Ejecutando
+			Esperando
+			Preparado
+			Treminado
+		Bloque de control de proceso
+			Estado del proecso
+			Contador de programa
+			Registos de la CPU
+			Info de planificación de la CPU
+			Info gestion de memoria
+			Enfo de registro
+			Info de estado de la E/S
+		Colas de planificación
+			Cola de trabajo
+			Colas de espera
+			Colas de dispositivo
+		Planificion de procesos
+			Largo Plazo
+			Corto plazo
+			Medio plazo
+		Cambio de contexto
+			Contador de programa
+			registros de la CPU
+			Estado del proceso
+			Info de gestion de la memoria
+		Operaciones sobre los procesos
+			Creación de procesos
+				Árbol de procesos
+				Cómo obtienen los procesos hilos los recursos que necesitan
+				Como pasar parámetros de inicialización a los procesos hijo
+					Argumentos de linea de comando
+					Variables de entorno
+					Herencia de recursos ( Entrada estandar - salida estandar - salida de error )
+				Que ocurre con la ejecuión del padre
+				Como se construye el espacio de direcciones de los procesos hijo
+			Terminación de procesos 
+				Salir
+				Esperar a un hijo
+				Esperar a varios hijos
+				Terminar otro procesos
+			Ejemplos de operaciones con procesos
+				Windows APi
+		Procesos cooperativos ( independientes - cooperativos )
+			Motiivaciones para la colaboracion entre procesos
+				Comparación de información
+				Velocidad de cómputo
+				Modularidad
+				Convenencia
+			Comuinicacion entre procesos
+				Memoria compartida
+				Paso de mensajes
+				
+	Comunicacion mediante paso de mensajes
+		Tamaño del mensaje ( size variable - size fijo )
+			Orientada a flujos
+		Referenciación
+			Comunicación directa 
+			Comunicación indirecta 
+			REcepción concurrente
+		Buffering
+			Sin buffering
+			Buffering automatico
+				capacidad limitada
+				capacidad ilimitada
+		Operaciones Sincronas y asincronas
+			envío sincrono
+			envío asíncrono
+			recepcion asíncrona
+			recepcion es con bloqueo
+		Ejemplo de sistemas de paso de mensajes
+			Colas de mensajes POSIX
+			Señales en ssitemas operativos POSIX
+			Tuberías
+			Sockets
+			
+	Memoria compartida
+		memoria compartida anónima
+			
+		Memoria compartida con nombre
+	Hilos
+		Intro
+		Beneficios
+			tiempo respuesta
+			comparacion de recursos
+			Economía
+			Aprovechamiento de las arquitecturas multiprocesador
+		Soporte multihilo
+			Hilos a nivel de usuario
+			Hilos a nivel de núcleo
+			Implementaciones
+		Modelos multihilo
+			Muchos a uno ( N:1)
+				Ventajas
+					Bajo coste
+					Librería de hilos
+					menos cambios de contexto
+				Desventajas
+					No paralelismo
+					Posible bloqueo de hilos
+				Operaciones bloqueantes
+				Implementaciones
+			Uno a Uno (1:1)
+				Ventajas
+					Paralelismo - mismo procesador
+					Paralelismo - multiprocesador
+				Desventajas
+					Mayor coste
+					Gestión mas compeja
+				Implementaciones
+			Muchos a Muchos ( M:N
+				Archivacion del planificador
+				Ventajas
+				Desventajas
+				Implementaciones
+			Dos niveles
+				Ventejas 
+				Desventajas
+			Coste de crear hilos y la eleccion de modelo
+		Operaciones sobre los hilos
+			Creacion de hilos
+				HILO PRINCIPAL
+			Cancelación de hilos
+				Asíncrona
+				En diferido
+			Cancelación en POSIX Threads
+				Asíncrona
+				En diferido
+			Cancelacion de hilos en lenguajes de alto nivel
+		Otras consideraciones sobre hilos
+			LLamadas al sistema fork() y exec() en procesos multihilo
+			Manejo de señales en proceso multihilo
+				señales sincronas
+				señales asíncronas
+				Señales enviadas por otros hilos
+				Señales enviadas por el sistema
+	Sincronización
+		El problema de las secciones críticas 
+			Problema del productor-consumidor
+			Manipular estructuras de datos
+			Exclusión mutua
+			Eventos
+		Sincronización por hardware
+			Bloque de interrupciones
+			Instrucciones atómicas 
+		Semáforos
+			Tipos
+				Crear semáforo anónimos
+				Crear semáforo con nombre
+				Abrir semáforo con nombre
+				Operacion acquire
+				Operacion release
+				Cerrar semaforo con nombre
+				Destruir semáforo con nombre
+			Ejemplos del uso de semaforos
+		Mutex
+			Crear
+			Abrir
+			Operacion acquire
+			Op release
+			Destruir
+			Ejemplos
+		Variables de condición
+			wait
+			notify
+			notifyAll
+			Ejemplos
+		Implementación de semáforos
+			Esperas
+		Esperas
+		Funciones reentrantes y seguras en hilos
+			Seguridad en hilos
+				C++
+				C
+				POSIX
+	Planificación de la CPU
+		Planificación Expropiativa
+		el asignador
+		Criterios de planificación
+			A maximizar
+				Uso de CPU
+				Tasa de procesamiento
+			A minimizar
+				Tiempo de ejecución
+				Tiempo de espera
+				Tiempo de respuesta
+			Eleccion del criterio adecuado
+				Sistemas interactivos
+				No interactivos
+				Promedio o varianza del criterio
+		Ciclo de réfagas de CPu y de E/S
+		Algoritmos de planificación de la CPU
+			Planificación FCFS ( First Come, First Serverd )
+			Planificación SJF ( Shortest-Job First )
+			Planificación SRTF ( Shortest-Remainig-Time First )
+			Planificacion con prioridades
+				Expropiativo
+				Cooperativo
+				Prioridades definidas internamente o externamente
+				Muerte por inanición
+			Planificación RR ( Round-Robin )
+				Reparto equitativo del tiempo de CPU
+			Planificación equitativa
+				Implementacion básica
+					Instatnte Inical
+					Instante Final
+				Planificacion equitativa ponderada
+				Implementación de la planificacion equitativa ponderada
+				Ejeplo de planificacion equitativa ponderada
+			Planificacion con colas multinivel
+			Planificacion con colas multinivel realimentadas
+		Planificación de tiempo real
+			Teimpo real estricto
+			Tiempo real flexible
+			Implementacion del soporte de tiempo real
+				Puntos de exploración
+				Núcleo expropiable
+				Inversión de proridad
+		Planificación en ssitemas multiprocesador
+			Multiprocesamiento asimétrico
+			Multiprocesamiento simétrico
+				Con cuna cola de preparados común
+				Con una cola para cada procesador
+
+B2
+Parte 4 - Gestión de la memoria
+	Memoria principal
+		Etapas de programa de usuario
+		Reubicación de las direcciones
+			En tiempo de compilación
+			En tiempo de carga
+			En tiempo de ejecución
+		Espacio de direcciones virtual frente a físico
+		Enlazado dinámico y librerías compartidas
+			Reubicación de las direcciones
+			Librerías compartidas
+		Asignación contigua de memoria
+			Particionado fijo
+			Particionado dinámico
+		Fragmentación
+			Externa
+			Interna
+		Intercambio
+			Implementación
+			Limitaciones
+	Paginación
+		Método básico
+			Punto de vista de los procesos
+			Punto de vista del SSOO
+			Tamaño de las páginas
+		Soporte hardware de la tabla de páginas
+			Almacenada en registros de la CPU
+			Almacenada en memoria
+			TLB
+		Tiempos de acceso a la memoria
+		Proteccion de la memoria
+			Bits de protección
+			Bits de válido
+		Paginas compartidas	
+ 		Paginación jerarquica
+			de dos niveles
+			N niveles
+			Tiempos de acceso a la memoria
+	memoria Virtual
+		Paginacion bajo demanda
+			Requerimientos de la paginacion bajo demanda
+			Rendimiento de la paginacion bajo demanda
+				tiempos de acceso efectivo
+				manejo y uso del espacio de intercambio
+		Copy-on-write
+		Archivos mapeados en memoria
+			ejemplo de mapeo de archivos
+			mapeo de archivos en el nucleo
+		reemplaxo de página
+			algoritmo de reemplazo de páginas
+				trazas de referencias
+				Reemplaxo FIFO
+				Reemplaxo óptimo
+				Reemplazo LRU
+				Reemplazo LRU aproximado
+				Reemplazo NRU
+				Com bits de referencia adicionales
+				Algoritmo de la segunda oportunidad
+				Algoritmo de la segunda oportunidad mejorado
+				Reemplazzo basado en contador
+				Reemplazo LFU
+				Reemplazo MFU
+				Algoritmo de buffering de páginas
+				Reemplazo local frente a global
+				Asignación de marcos de página
+		Hiperpaginación
+			Causas de hiperpaginacion
+			Soluciones a la hiperpaginacion
+			Modelo del conjunto de trabajo
+			Uso del conjunto del trabajo para evitar hiperpaginacion
+		Otras consideraciones 
+			Prepaginado
+			Aplicaciones en modo RAW
+			Tamaño de páginas
+			Efecto de la estrtuctura de los programas
+			Interbloqueo de E/S
+		Interfaz de gestión de la memoria
+			anatomía del espacio de direcciones virtual del prceso
+			gestión de la memoria del montón
+			Fragmentacion
+Parte 5 - Gestion del almacenaniemto
+	Almacenamiento Secundario
+		Dispositivos de almacenamiento
+			Discos magnéticos
+			Discos ópticos
+			Memorias de estado sólido
+		Archivos y sistema de archivos
+		Volumenes de datos
+			RAID
+			Particiones
+			Volumenes dinámicos
+	Sistemas de archivos
+		Estructura de un sistema de archivos
+    Estructura de metadatos en Discos 
+    Estructura de metadatos en memoria
+    Montaje de sistemas de archivos
+	Implementación de sistemas de archivos
