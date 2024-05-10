@@ -400,7 +400,85 @@ Parte 5 - Gestion del almacenaniemto
 			Volumenes dinámicos
 	Sistemas de archivos
 		Estructura de un sistema de archivos
-    Estructura de metadatos en Discos 
+      Control de E/S
+      Sistema básico de archivos
+      Módulo de organización de archivos
+      Sistema lógico de archivos
+    Estructura de metadatos en Discos
+      Bloque de control de Arranque
+      Bloque de control de Volumen
+      Bloque de control de archivos
+      Estructura de directorios 
     Estructura de metadatos en memoria
     Montaje de sistemas de archivos
-	Implementación de sistemas de archivos
+    Archivos
+      Atributos de archivos
+        nombre
+        identificador
+        Tipo
+        ubicacion
+        Tamaño
+        Proteccion
+        Fecha, hora e identificacion  del usuario
+      Operaciones con los archivos
+      Abrir archivos
+      Tipos de archivos
+    Estructura de directorios 
+      Directorios de un nivel
+      Directorios de dos niveles
+      Directorios con estructura de Árbol
+        Directorio de trabajo actual
+        Nombre de ruta
+      Directorios en grafo acíclico
+        Enlaces
+        Inconvenientes
+      Directorios en forma de grafo general
+    Compartición de archivos
+      Múltiples usuarios y protección
+        Lista de control de acceso
+        Lista de control de acceso condensada
+        Combinar ambos tipos de listas de control de acceso
+      Semantica de Coherencia
+        Semantica POSIX
+        Semantica de sesión
+        Semantica de archivos compartidos inmutables
+      Bloques de Archivo 
+        Obligatorio o sugerido
+    Coherencia
+      Comprobacion de Coherencia
+      Soft Upgrades
+      Sistemas de archivos basados en registro
+        Operaciones sobre datos
+        Rendimiento en el acceso a Disco
+      Sistemas de archivos basados en copia durante la escritura
+  Implementacion de sistemas de archivos
+    Implementacion de directorios
+      Lista lineal
+      Tabla de dispersión
+      Árbol B
+    Métodos de Asignación
+      Asignacion contigua
+        fragmentacion externamente
+        Estimacion del tamaño del archivo
+      Asignacion enlazada
+        Eficiencia en accesos aleatorios
+        Eficiencia en el uso del espacio de almacenamiento
+        Fiabilidad
+      Asignacion indexada
+    Gestion del espacio libre
+      Vector de bits
+      Lista enlazada
+      Agrupamiento
+      Recuento
+    Sistemas de archivos virtuales
+      Interfaz del sistema de archivos
+      Sistema de archivos virtual
+      Implementacion del sistema de archivos
+    Planificación de disco
+      Cola de E/S al disco
+      Planificacion FCFS
+      Planificación SCAN y C-SCANç
+      Planificacion LOOK - C-LOOK
+      Planificación N-STEP-SCAN, N-Step-LOOK y F-SCAN
+      Planificacion CFQ
+      
