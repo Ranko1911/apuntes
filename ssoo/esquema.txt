@@ -1,5 +1,3 @@
-B1
-Parte 1 - INTRODUCCION
 	Tipos de SSOO
 		Mainframne
 			Por lotes
@@ -14,31 +12,6 @@ Parte 1 - INTRODUCCION
 			sis op para sis distribuidos
 		Clúster
 		Tiempo real
-Parte 2 - Organización de los sistemas operativos
-	Componentes del Sistema
-		Gestion de procesos
-		Gestion de memoria principal
-		Gestión del sistema de E/S
-			Buffering - Caching - Spooling
-		Gestión del almacenamientop secundario 
-		Gestion del sistema de archivos
-		Gestión de Red
-		Protección y Seguridad
-	Servicios el Sistema
-		Servicios que garantizan el funcionamiento eficiente del sistema
-			Asignación de recursos
-			Monitorizacion
-			Proteccion y Seguridad
-		Servicios útiles para el usuario
-			Interfaz de Usuariio
-			Operaciones de E/S
-			Manipulacuion de Sistema de archivos
-			Comunicaciones
-			Detección de erroes
-		Interfaz del usuario
-			Línea / Interprete de Comandos
-			Procesos por lotes
-			Interfaz gráfica de usuario ( GUI )
 	Interfaz de programacion de aplicaciones
 		Interfaces de programacion de aplicaciones
 			Windows API - POSIX 
@@ -134,7 +107,6 @@ Parte 3 - Gestión de procesos
 			Comuinicacion entre procesos
 				Memoria compartida
 				Paso de mensajes
-				
 	Comunicacion mediante paso de mensajes
 		Tamaño del mensaje ( size variable - size fijo )
 			Orientada a flujos
@@ -160,7 +132,6 @@ Parte 3 - Gestión de procesos
 			
 	Memoria compartida
 		memoria compartida anónima
-			
 		Memoria compartida con nombre
 	Hilos
 		Intro
@@ -363,7 +334,7 @@ Parte 4 - Gestión de la memoria
 				Reemplazo LRU
 				Reemplazo LRU aproximado
 				Reemplazo NRU
-				Com bits de referencia adicionales
+				Con bits de referencia adicionales
 				Algoritmo de la segunda oportunidad
 				Algoritmo de la segunda oportunidad mejorado
 				Reemplazzo basado en contador
@@ -387,98 +358,3 @@ Parte 4 - Gestión de la memoria
 			anatomía del espacio de direcciones virtual del prceso
 			gestión de la memoria del montón
 			Fragmentacion
-Parte 5 - Gestion del almacenaniemto
-	Almacenamiento Secundario
-		Dispositivos de almacenamiento
-			Discos magnéticos
-			Discos ópticos
-			Memorias de estado sólido
-		Archivos y sistema de archivos
-		Volumenes de datos
-			RAID
-			Particiones
-			Volumenes dinámicos
-	Sistemas de archivos
-		Estructura de un sistema de archivos
-      Control de E/S
-      Sistema básico de archivos
-      Módulo de organización de archivos
-      Sistema lógico de archivos
-    Estructura de metadatos en Discos
-      Bloque de control de Arranque
-      Bloque de control de Volumen
-      Bloque de control de archivos
-      Estructura de directorios 
-    Estructura de metadatos en memoria
-    Montaje de sistemas de archivos
-    Archivos
-      Atributos de archivos
-        nombre
-        identificador
-        Tipo
-        ubicacion
-        Tamaño
-        Proteccion
-        Fecha, hora e identificacion  del usuario
-      Operaciones con los archivos
-      Abrir archivos
-      Tipos de archivos
-    Estructura de directorios 
-      Directorios de un nivel
-      Directorios de dos niveles
-      Directorios con estructura de Árbol
-        Directorio de trabajo actual
-        Nombre de ruta
-      Directorios en grafo acíclico
-        Enlaces
-        Inconvenientes
-      Directorios en forma de grafo general
-    Compartición de archivos
-      Múltiples usuarios y protección
-        Lista de control de acceso
-        Lista de control de acceso condensada
-        Combinar ambos tipos de listas de control de acceso
-      Semantica de Coherencia
-        Semantica POSIX
-        Semantica de sesión
-        Semantica de archivos compartidos inmutables
-      Bloques de Archivo 
-        Obligatorio o sugerido
-    Coherencia
-      Comprobacion de Coherencia
-      Soft Upgrades
-      Sistemas de archivos basados en registro
-        Operaciones sobre datos
-        Rendimiento en el acceso a Disco
-      Sistemas de archivos basados en copia durante la escritura
-  Implementacion de sistemas de archivos
-    Implementacion de directorios
-      Lista lineal
-      Tabla de dispersión
-      Árbol B
-    Métodos de Asignación
-      Asignacion contigua
-        fragmentacion externamente
-        Estimacion del tamaño del archivo
-      Asignacion enlazada
-        Eficiencia en accesos aleatorios
-        Eficiencia en el uso del espacio de almacenamiento
-        Fiabilidad
-      Asignacion indexada
-    Gestion del espacio libre
-      Vector de bits
-      Lista enlazada
-      Agrupamiento
-      Recuento
-    Sistemas de archivos virtuales
-      Interfaz del sistema de archivos
-      Sistema de archivos virtual
-      Implementacion del sistema de archivos
-    Planificación de disco
-      Cola de E/S al disco
-      Planificacion FCFS
-      Planificación SCAN y C-SCANç
-      Planificacion LOOK - C-LOOK
-      Planificación N-STEP-SCAN, N-Step-LOOK y F-SCAN
-      Planificacion CFQ
-      
