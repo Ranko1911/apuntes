@@ -1,6 +1,4 @@
-B1
-Parte 1 - INTRODUCCION
-	Tipos de SSOO
+	2.Tipos de SSOO
 		Mainframne
 			Por lotes
 			Multiprogramados
@@ -14,32 +12,7 @@ Parte 1 - INTRODUCCION
 			sis op para sis distribuidos
 		Clúster
 		Tiempo real
-Parte 2 - Organización de los sistemas operativos
-	Componentes del Sistema
-		Gestion de procesos
-		Gestion de memoria principal
-		Gestión del sistema de E/S
-			Buffering - Caching - Spooling
-		Gestión del almacenamientop secundario 
-		Gestion del sistema de archivos
-		Gestión de Red
-		Protección y Seguridad
-	Servicios el Sistema
-		Servicios que garantizan el funcionamiento eficiente del sistema
-			Asignación de recursos
-			Monitorizacion
-			Proteccion y Seguridad
-		Servicios útiles para el usuario
-			Interfaz de Usuariio
-			Operaciones de E/S
-			Manipulacuion de Sistema de archivos
-			Comunicaciones
-			Detección de erroes
-		Interfaz del usuario
-			Línea / Interprete de Comandos
-			Procesos por lotes
-			Interfaz gráfica de usuario ( GUI )
-	Interfaz de programacion de aplicaciones
+	6.Interfaz de programacion de aplicaciones
 		Interfaces de programacion de aplicaciones
 			Windows API - POSIX 
 		Llamadas al sistema
@@ -51,7 +24,7 @@ Parte 2 - Organización de los sistemas operativos
 		Librería del sistema
 		Librería estándar
 		Todas las piezas juntas
-	Operacion del sistema operativo
+	7.Operacion del sistema operativo
 		Software controlado mediante interrupciones
 		Operacion en modo dual
 			Modos de operacion ( Usuario - Privilegiado )
@@ -65,7 +38,7 @@ Parte 2 - Organización de los sistemas operativos
 				Inicializar el sistema
 				Iniciar el sistema operativo
 			Arranque de sistema UNIX
-	Sistemas operativos por su estructura
+	8.Sistemas operativos por su estructura
 		Estructura Sencilla ( MS-DOS | UNIX )
 		Estructura en capas
 			Dificultades del diseño
@@ -73,7 +46,7 @@ Parte 2 - Organización de los sistemas operativos
 			Rendimiento 
 		Estructura Modular
 Parte 3 - Gestión de procesos
-	Procesos
+	9.Procesos
 		El proceso 
 			Seg de código
 			Seg de datos
@@ -134,8 +107,7 @@ Parte 3 - Gestión de procesos
 			Comuinicacion entre procesos
 				Memoria compartida
 				Paso de mensajes
-				
-	Comunicacion mediante paso de mensajes
+	10.Comunicacion mediante paso de mensajes
 		Tamaño del mensaje ( size variable - size fijo )
 			Orientada a flujos
 		Referenciación
@@ -158,11 +130,10 @@ Parte 3 - Gestión de procesos
 			Tuberías
 			Sockets
 			
-	Memoria compartida
+	11.Memoria compartida
 		memoria compartida anónima
-			
 		Memoria compartida con nombre
-	Hilos
+	12.Hilos
 		Intro
 		Beneficios
 			tiempo respuesta
@@ -218,7 +189,7 @@ Parte 3 - Gestión de procesos
 				señales asíncronas
 				Señales enviadas por otros hilos
 				Señales enviadas por el sistema
-	Sincronización
+	13.Sincronización
 		El problema de las secciones críticas 
 			Problema del productor-consumidor
 			Manipular estructuras de datos
@@ -257,7 +228,7 @@ Parte 3 - Gestión de procesos
 				C++
 				C
 				POSIX
-	Planificación de la CPU
+	14.Planificación de la CPU
 		Planificación Expropiativa
 		el asignador
 		Criterios de planificación
@@ -308,7 +279,7 @@ Parte 3 - Gestión de procesos
 
 B2
 Parte 4 - Gestión de la memoria
-	Memoria principal
+	15.Memoria principal
 		Etapas de programa de usuario
 		Reubicación de las direcciones
 			En tiempo de compilación
@@ -327,7 +298,7 @@ Parte 4 - Gestión de la memoria
 		Intercambio
 			Implementación
 			Limitaciones
-	Paginación
+	16.Paginación
 		Método básico
 			Punto de vista de los procesos
 			Punto de vista del SSOO
@@ -345,7 +316,7 @@ Parte 4 - Gestión de la memoria
 			de dos niveles
 			N niveles
 			Tiempos de acceso a la memoria
-	memoria Virtual
+	17.memoria Virtual
 		Paginacion bajo demanda
 			Requerimientos de la paginacion bajo demanda
 			Rendimiento de la paginacion bajo demanda
@@ -363,7 +334,7 @@ Parte 4 - Gestión de la memoria
 				Reemplazo LRU
 				Reemplazo LRU aproximado
 				Reemplazo NRU
-				Com bits de referencia adicionales
+				Con bits de referencia adicionales
 				Algoritmo de la segunda oportunidad
 				Algoritmo de la segunda oportunidad mejorado
 				Reemplazzo basado en contador
@@ -388,7 +359,7 @@ Parte 4 - Gestión de la memoria
 			gestión de la memoria del montón
 			Fragmentacion
 Parte 5 - Gestion del almacenaniemto
-	Almacenamiento Secundario
+	18.Almacenamiento Secundario
 		Dispositivos de almacenamiento
 			Discos magnéticos
 			Discos ópticos
@@ -398,7 +369,7 @@ Parte 5 - Gestion del almacenaniemto
 			RAID
 			Particiones
 			Volumenes dinámicos
-	Sistemas de archivos
+	19.Sistemas de archivos
 		Estructura de un sistema de archivos
       Control de E/S
       Sistema básico de archivos
@@ -481,4 +452,3 @@ Parte 5 - Gestion del almacenaniemto
       Planificacion LOOK - C-LOOK
       Planificación N-STEP-SCAN, N-Step-LOOK y F-SCAN
       Planificacion CFQ
-      
