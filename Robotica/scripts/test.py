@@ -44,3 +44,21 @@
 # print(listaCompleta)
 # lista1.extend(lista2) # se modifica lista1
 # print(lista1)
+
+import random
+
+opciones = ['piedra', 'papel', 'tijeras']
+jugador = input("Elige piedra, papel o tijeras: ").lower()
+computadora = random.choice(opciones)
+
+print(f"Tú elegiste: {jugador}")
+print(f"La computadora eligió: {computadora}")
+
+if jugador == computadora:
+    print("¡Es un empate!")
+elif (jugador == "piedra" and computadora == "tijeras") or \
+     (jugador == "tijeras" and computadora == "papel") or \
+     (jugador == "papel" and computadora == "piedra"):
+    print("¡Ganaste!")
+else:
+    print("Perdiste, ¡inténtalo de nuevo!")
