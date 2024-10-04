@@ -23,24 +23,24 @@
 # for i in range(10):
     # print(l)
 
-valor = 3
-posicion = 2
-lista1 = [1, 2, 3]
-lista2 = [4, 5, 6]
-lista=[ 1, [ 1, 2, 3], 3 ,4 ]
-print(lista)
-lista.append(5) # modifica lista
-print(lista)
-lista.insert(1,valor)
-print(lista)
-print(lista.pop()) # modifica lista, devuelve elemento emiminado
-print(lista.pop(posicion)) # modifica lista, devuelve elemento emiminado
-lista.remove(valor) # modifica lista
-print(lista)
-print(lista.count(valor))
-print(lista.index(valor))
-print(valor in lista) # devuelve True o False
-listaCompleta = lista1 + lista2
-print(listaCompleta)
-lista1.extend(lista2) # se modifica lista1
-print(lista1)
+# valor = 3
+# posicion = 2
+# lista1 = [1, 2, 3]
+# lista2 = [4, 5, 6]
+# lista=[ 1, [ 1, 2, 3], 3 ,4 ]
+# print(lista)
+# lista.append(5) # modifica lista
+# print(lista)
+# lista.insert(1,valor)
+# print(lista)
+# print(lista.pop()) # modifica lista, devuelve elemento emiminado
+# print(lista.pop(posicion)) # modifica lista, devuelve elemento emiminado
+# lista.remove(valor) # modifica lista
+# print(lista)
+# print(lista.count(valor))
+# print(lista.index(valor))
+# print(valor in lista) # devuelve True o False
+# listaCompleta = lista1 + lista2
+# print(listaCompleta)
+# lista1.extend(lista2) # se modifica lista1
+# print(lista1)
