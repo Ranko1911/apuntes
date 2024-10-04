@@ -7,10 +7,18 @@ dias[4:] # Se extrae una lista desde el valor 4 (incluido)
 dias[2:-1] # del tercer al penúltimo elementos
 dias[:] # Se extrae una lista con todos los valores
 
-print(dias[1:4])
-print(dias[4:5])
-print(dias[4:4])
-print(dias[:4])
-print(dias[4:])
-print(dias[2:-1])
-print(dias[:])
+
+letras = ["A", "B", "C", "D", "E", "F", "G", "H"]
+# print(letras)
+del letras[4] # Elimina la sublista ['E']
+# print(letras)
+del letras[1:4] # Elimina la sublista ['B', 'C', 'D']
+# print(letras)
+del letras # Elimina completamente la lista
+# print letras # Error: la lista ya no existe
+
+l = (1, "A", 3.14) # Una tupla
+print(l)
+
+for i in range(10):
+    print(l)
