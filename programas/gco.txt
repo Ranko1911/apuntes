@@ -1,0 +1,23 @@
+ ¿Cuál es el problema de visibilidad que enfrentan los agricultores locales?
+ Muchos pequeños agricultores carecen de medios efectivos para promocionar sus productos o expandir su mercado. La aplicación les proporciona una plataforma digital para mejorar su alcance.
+
+ ¿Por qué los consumidores tienen dificultades para acceder a productos frescos?
+ A menudo, los consumidores no conocen la ubicación y horarios de los mercadillos, lo que limita su capacidad para encontrar productos frescos de calidad.
+
+ ¿Cuáles son las ineficiencias en la cadena de suministro que se presentan?
+ La intermediación eleva los precios y reduce la frescura de los productos. Al eliminar intermediarios, la aplicación reduce el tiempo de tránsito, mejorando la frescura y el precio.
+
+ ¿Cómo se relaciona la aplicación con el desperdicio alimentario?
+ La falta de previsión sobre la demanda lleva a la sobreproducción o subproducción. La aplicación optimiza la producción agrícola al permitir pedidos anticipados.
+
+ ¿Cómo mejora AgroConecta la visibilidad y conexión directa entre agricultores y consumidores?
+ Al conectar a los agricultores directamente con los consumidores, AgroConecta ofrece una plataforma de fácil acceso para que los agricultores puedan registrar y actualizar sus productos en tiempo real.
+
+ ¿Qué función tiene la geolocalización en AgroConecta?
+ Los consumidores pueden consultar la ubicación de los mercadillos y los horarios de apertura, lo que facilita su acceso a productos frescos.
+
+ ¿Cómo se gestionan los pedidos anticipados y reservas en la aplicación?
+ Esto permite a los agricultores planificar mejor sus ventas, reduciendo el desperdicio y optimizando su producción. Para los consumidores, asegura la disponibilidad de productos antes de acudir al mercadillo.
+
+ ¿Qué beneficios aporta AgroConecta al comercio local?
+ Reduce los costos y tiempos de transporte, permitiendo que los productos lleguen frescos y a mejor precio a los consumidores.
