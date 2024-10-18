@@ -1,0 +1,3 @@
+  152  python3 cin_dir_1.py 3 8
+  209  python3 cin_dir_2.py 90 5 10
+
