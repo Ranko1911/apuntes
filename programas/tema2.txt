@@ -1,0 +1,120 @@
+¿Qué es una organización?
+Es una estructura social formal y estable que toma recursos del entorno y los transforma en bienes y servicios.
+¿Cuáles son los factores primarios de producción en una organización?
+El capital y el trabajo.
+¿Qué rol juegan las organizaciones en la transformación de insumos?
+Las organizaciones transforman insumos (capital y trabajo) en bienes y servicios.
+¿Qué relación tiene una organización con su entorno?
+Las organizaciones toman recursos del entorno y los transforman en bienes y servicios que luego el entorno consume.
+¿Cuáles son las características clave de una organización?
+Tiene una estructura formal, jerarquía, división del trabajo, derechos y obligaciones, y procesos establecidos.
+¿Cómo se coordina el trabajo dentro de una organización?
+A través de la estructura jerárquica y los procedimientos establecidos.
+¿Qué elementos coordinan el trabajo en una organización?
+Jerarquía,división del trabajo, derechos y obligaciones, y procedimientos formales.
+¿Cómo afecta el entorno a la organización?
+El entorno provee insumos (capital y trabajo) que la organización transforma en bienes y servicios.
+¿Qué produce una organización a partir de los insumos?
+Produce bienes y servicios para el consumo del entorno.
+¿Qué factores organizacionales permiten a una empresa operar eficazmente?
+Una clara división del trabajo, una jerarquía establecida y procedimientos definidos.
+¿Qué son los sistemas de información sociotécnicos?
+Son sistemas que requieren tanto tecnología como el factor humano para funcionar eficazmente.
+¿Por qué la interacción entre las TI y las organizaciones es compleja?
+Debido a los múltiples factores mediadores como la estructura del negocio, cultura organizacional, políticas y decisiones administrativas.
+¿Qué factores mediadores influyen en la relación entre TI y organizaciones?
+La estructura del proceso de negocios, políticas, cultura organizacional, entorno y decisiones administrativas.
+¿Cómo afecta la adopción de TI a las organizaciones?
+Puede cambiar la estructura, los procedimientos, los derechos y responsabilidades de los empleados.
+¿Por qué algunos cambios organizacionales a partir de TI no pueden preverse?
+Porque las TI pueden generar efectos inesperados o no cumplir con las expectativas inicialmente planeadas.
+¿Cómo afectan las TI a las decisiones administrativas?
+Las TI facilitan la toma de decisiones mediante el acceso rápido a la información y la automatización de procesos.
+¿Qué papel juega el factor humano en los sistemas de información?
+El factor humano es esencial para el funcionamiento de los sistemas de información, ya que la tecnología por sí sola no es suficiente.
+¿Cómo puede una organización beneficiarse de las TI?
+Aceptando su influencia y adaptando sus procesos para mejorar la eficiencia y competitividad.
+¿Qué sucede cuando una organización adopta nuevas TI sin ajustarse adecuadamente?
+Puede enfrentar dificultades, retrasos y costos adicionales en la implementación y capacitación.
+¿Qué retos presenta la integración de TI en una organización?
+Manejar los cambios organizacionales y ajustar la tecnología a los procesos y cultura existentes.
+¿Qué son los Sistemas de Procesamiento de Transacciones (TPS)?
+Son sistemas que apoyan las operaciones diarias de la empresa, como ventas, compras y recursos humanos.
+¿Qué funciones cumplen los Sistemas de Información Gerencial (MIS)?
+Proporcionan informes a los administradores, resumiendo actividades rutinarias y eventos excepcionales.
+¿Cuál es el objetivo de los Sistemas de Apoyo a Decisiones (DSS)?
+Ayudar en la toma de decisiones semiestructuradas y no rutinarias, proporcionando análisis interactivos.
+¿Qué ofrecen los Sistemas de Apoyo a Ejecutivos (ESS)?
+Brindan información estratégica del entorno para la toma de decisiones a nivel superior.
+¿Qué categorías abarca un TPS?
+Ventas y marketing, producción, finanzas, contabilidad y recursos humanos.
+¿Qué papel juegan los Sistemas de Trabajo de Conocimiento (KWS)?
+Ayudan a quienes crean nueva información, como ingenieros o contadores.
+¿Cómo diferencian los Sistemas de Automatización de Oficinas (OAS) de los KWS?
+Los OAS ayudan a procesar información rutinaria como la gestión de documentos, mientras que los KWS apoyan la creación de conocimiento.
+¿Cómo puede un sistema de información ayudar a una organización a ser más competitiva?
+Mejorando la eficiencia, reduciendo costos y apoyando la diferenciación de productos.
+¿Cuáles son los niveles de una organización que apoyan los sistemas de información?
+Nivel operativo, nivel de conocimientos, nivel administrativo y nivel estratégico.
+¿Qué tipo de decisiones apoyan los DSS?
+Decisiones semiestructuradas, únicas o que cambian rápidamente.
+¿Qué es una estrategia en el nivel de negocio?
+Es cómo competir eficazmente en un mercado específico.
+¿Cuáles son las tres estrategias clave en el nivel de negocio?
+Ser el productor con menor costo, diferenciar el producto o servicio, o ampliar/achicar el mercado.
+¿Qué es el modelo de cadena de valor?
+Es un modelo que analiza las actividades de una organización para identificar dónde las TI pueden tener mayor impacto.
+¿Qué actividades analiza la cadena de valor?
+Las actividades primarias relacionadas con la producción de bienes y servicios, y las actividades secundarias que las apoyan.
+¿Cómo puede una organización aprovechar las TI en la cadena de valor?
+Identificando áreas donde las TI pueden mejorar la eficiencia o reducir costos.
+¿Cómo pueden las TI ayudar en la diferenciación de productos?
+Ofreciendo características únicas que sean difíciles de copiar por la competencia.
+¿Qué impacto tiene la integración de la cadena de suministro en la satisfacción del cliente?
+Mejora la satisfacción del cliente al optimizar el inventario y reducir la necesidad de cambiar de proveedor.
+¿Qué significa "ser el productor con menor costo"?
+Lograr producir bienes o servicios a un costo más bajo que la competencia.
+¿Cómo pueden las TI apoyar en la ampliación o contracción del mercado?
+Facilitando el acceso a nuevos clientes o segmentos, o ayudando a concentrar recursos en mercados clave.
+¿Cómo puede una organización identificar el mejor nicho de mercado para enfocarse?
+Utilizando sistemas de información para analizar datos de ventas, marketing y comportamiento del cliente.
+¿Cómo afecta la implementación de SI a la estructura organizacional?
+Puede modificar la jerarquía, los procedimientos y la toma de decisiones.
+¿Por qué existe resistencia al cambio en las organizaciones con SI?
+Porque los sistemas de información pueden alterar la estructura, la cultura y las políticas de la organización.
+¿Qué papel juegan los SI en la reducción de costos?
+Reducen los costos de transacción y los costos internos de administración.
+¿Qué dice la teoría de la agencia sobre los SI?
+Los SI facilitan el control de los empleados y mejoran la supervisión.
+¿Cómo contribuye internet al acceso de la información dentro de las organizaciones?
+Aumenta la accesibilidad, el almacenamiento y la distribución de información.
+¿Qué sucede cuando los SI reducen el costo de la información?
+Permiten una distribución más amplia de la información y pueden alterar la toma de decisiones en la organización.
+¿Qué es la resistencia política en las organizaciones respecto a los SI?
+Es la oposición de subgrupos dentro de la organización que quieren mantener o aumentar su influencia en las decisiones políticas.
+¿Cómo afecta el diseño de los sistemas de información a una organización?
+Puede influir en la forma en que se organizan los procesos de trabajo y se toman las decisiones.
+¿Qué efectos tiene el uso de SI en la eficiencia operativa de una organización?
+Mejora la eficiencia operativa al automatizar procesos y reducir errores humanos.
+¿Qué factores llevan a una organización a adoptar un nuevo SI?
+Factores del entorno (externos) y factores institucionales (internos), como la mejora de procesos y la reducción de costos.
+¿Qué son las tecnologías clave en una organización?
+Son tecnologías que permiten a la organización diferenciarse de sus competidores por su calidad o menores costos.
+¿Qué son las tecnologías básicas?
+Son tecnologías conocidas por todos los competidores del sector y no ofrecen una ventaja competitiva significativa.
+¿Qué caracteriza a las tecnologías incipientes?
+Son tecnologías en una fase inicial de desarrollo que tienen potencial para cambiar las bases de la competencia en el futuro.
+¿Qué son las tecnologías emergentes?
+Son tecnologías cuyo impacto es aún incierto, pero muestran indicios prometedores.
+¿Cómo deben gestionar las empresas sus tecnologías clave?
+Deben centrarse en maximizar el impacto de las tecnologías clave para mantener su ventaja competitiva.
+¿Qué recomendación se hace sobre la inversión en tecnologías emergentes?
+Se debe evitar grandes inversiones debido a la incertidumbre de su impacto.
+¿Cómo evolucionan las tecnologías en las organizaciones?
+Las tecnologías clave pueden pasar a ser básicas con el tiempo, a medida que otros competidores las adoptan.
+¿Qué debe hacer una empresa con tecnologías básicas?
+No debe hacer grandes inversiones en mejorar tecnologías que ya no proporcionan ventaja competitiva.
+¿Cuál es la diferencia entre tecnologías clave y tecnologías incipientes?
+Las tecnologías clave ya están establecidas y generan ventaja competitiva, mientras que las incipientes aún están en desarrollo.
+¿Qué recomendación se hace para el seguimiento de las tecnologías incipientes?
+Es recomendable seguir de cerca su evolución e invertir en ellas cuando se vea un potencial claro de beneficio.
