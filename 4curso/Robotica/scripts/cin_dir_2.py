@@ -101,10 +101,10 @@ p=[float(i) for i in sys.argv[1:nvar+1]] # lista de articulaciones
 
 # Parámetros D-H:
 #        1    2    3
-d  = [   5, p[1], 2    ]
-th = [p[0],    90, p[2] ]
-a  = [   0,    0,  2   ]
-al = [   90,    90,  0   ]
+d  = [   5,   0,   0 ]
+th = [p[0],   0, p[2]]
+a  = [   0,p[1],  2  ]
+al = [   90,  0,  0  ]
 
 # Orígenes para cada articulación
 o00=[0,0,0,1] # (x,y,z,1) referenciado a su propio sistema de coordenadas
