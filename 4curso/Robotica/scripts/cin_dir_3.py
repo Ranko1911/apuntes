@@ -147,6 +147,6 @@ o80 =np.dot(T08, o88).tolist()
 
 
 # Mostrar resultado de la cinemática directa, los puntos 510 y 520 van dentro de un array propio
-muestra_origenes([o00,o10,o20,o30,o40,o50,[[o60,o70]],o80]) 
-muestra_robot   ([o00,o10,o20,o30,o40,o50,[[o60,o70]],o80])
+muestra_origenes([o00,o10,o20,o30,o40,o50,[[o60],[o70]],o80]) 
+muestra_robot   ([o00,o10,o20,o30,o40,o50,[[o60],[o70]],o80])
 input()
