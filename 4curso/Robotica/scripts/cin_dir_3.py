@@ -101,7 +101,7 @@ p=[float(i) for i in sys.argv[1:nvar+1]]
 # Parámetros D-H:
 #        1    2     2     3    4     51     52    EF  
 d  = [p[0],   0,    0,    0,    0,    0,     0,   0]
-th = [p[1],   0,    0, p[3],   90, p[4], -p[4],   0]
+th = [0,   p[1],    0, -90,  p[3], p[4], 180-p[4],  90]
 a  = [   0,   5, p[2],    0,    0,    2,     2,   2]
 al = [   0,   0,    0,  -90,   90,   90,    90,  90]
 
@@ -147,6 +147,6 @@ o80 =np.dot(T08, o88).tolist()
 
 
 # Mostrar resultado de la cinemática directa, los puntos 510 y 520 van dentro de un array propio
-muestra_origenes([o00,o10,o20,o30,o40,o50,[o60,o70],o80]) 
-muestra_robot   ([o00,o10,o20,o30,o40,o50,[o60,o70],o80])
+muestra_origenes([o00,o10,o20,o30,o40,o50,[[o60],[o70]]],o80) 
+muestra_robot   ([o00,o10,o20,o30,o40,o50,[[o60],[o70]]],o80)
 input()
