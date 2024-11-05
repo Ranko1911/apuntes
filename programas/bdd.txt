@@ -1,0 +1,98 @@
+Pregunta: ¿Cuál es el modelo más antiguo y ampliamente usado en bases de datos?
+Respuesta: El modelo relacional, vigente por más de 45 años.
+
+Pregunta: ¿Qué problemas enfrentan las bases de datos relacionales en la actualidad?
+Respuesta: Presentan problemas de rendimiento y dificultad para gestionar grandes volúmenes de datos y estructuras que cambian con frecuencia.
+
+Pregunta: ¿Qué es una base de datos relacional?
+Respuesta: Es un sistema de almacenamiento de datos que organiza la información en tablas y mantiene la integridad referencial.
+
+Pregunta: ¿Cuáles son las ventajas del modelo relacional?
+Respuesta: Organización clara, integridad de datos, facilidad para crear sistemas complejos y uso extendido del lenguaje SQL.
+
+Pregunta: ¿Cuáles son las desventajas del modelo relacional?
+Respuesta: Alto costo en rendimiento, dificultad para gestionar cambios frecuentes en la estructura de datos, y problemas de escalabilidad en grandes volúmenes de datos.
+
+Pregunta: ¿Qué caracteriza a las bases de datos NoSQL?
+Respuesta: No utilizan SQL, ofrecen estructuras flexibles sin esquemas rígidos y permiten escalabilidad horizontal.
+
+Pregunta: ¿Cuáles son las principales ventajas de NoSQL?
+Respuesta: Flexibilidad, capacidad para almacenar grandes volúmenes de datos no estructurados y escalabilidad horizontal.
+
+Pregunta: ¿Cuáles son los cuatro tipos principales de bases de datos NoSQL?
+Respuesta: Documentales, orientadas a columnas, de clave-valor y en grafo.
+
+Pregunta: ¿Qué es una base de datos orientada a documentos y en qué formato almacena los datos?
+Respuesta: Gestiona datos semi-estructurados en formatos como JSON, XML o BSON.
+
+Pregunta: ¿Qué es una base de datos orientada a columnas?
+Respuesta: Almacena grandes cantidades de datos organizándolos en columnas en lugar de filas, lo cual permite realizar agregaciones eficientemente.
+
+Pregunta: ¿Qué es una base de datos de clave-valor?
+Respuesta: Almacena pares de datos en clave y valor, facilitando búsquedas rápidas por clave.
+
+Pregunta: ¿Qué es una base de datos en grafo?
+Respuesta: Utiliza nodos y aristas para representar relaciones complejas entre datos, ideal para redes sociales y relaciones complejas.
+
+Pregunta: ¿Cuándo es preferible usar SQL?
+Respuesta: En educación, desarrollo web, análisis empresarial y aplicaciones de negocio que requieren consistencia estructural.
+
+Pregunta: ¿Cuándo es recomendable usar NoSQL?
+Respuesta: En redes sociales, desarrollo móvil, Big Data y servicios en la nube donde los datos son heterogéneos y menos estructurados.
+
+Pregunta: ¿Qué diferencia hay entre la escalabilidad de SQL y NoSQL?
+Respuesta: SQL suele escalar verticalmente (aumentando la capacidad de un servidor), mientras que NoSQL escala horizontalmente (añadiendo más servidores).
+
+Pregunta: ¿Quién propuso los principios del modelo relacional y cuándo?
+Respuesta: Edgar F. Codd en 1970.
+
+Pregunta: ¿Qué llevó a la creación de bases de datos NoSQL?
+Respuesta: La necesidad de gestionar grandes volúmenes de datos y estructuras más flexibles, debido al aumento exponencial de la información en aplicaciones modernas.
+
+Pregunta: ¿Cómo garantizan las bases de datos relacionales la integridad de los datos?
+Respuesta: Mediante relaciones bien definidas entre tablas y restricciones que impiden la duplicación o pérdida de datos relacionados.
+
+Pregunta: ¿Por qué son costosas en términos de rendimiento las bases de datos relacionales?
+Respuesta: Porque cada cambio estructural (como añadir una columna) afecta a todos los registros de la tabla, incrementando el almacenamiento y el tiempo de procesamiento.
+
+Pregunta: ¿Por qué es útil la estructura sin esquemas de NoSQL en programación iterativa?
+Respuesta: Porque permite realizar cambios y agregar datos sin necesidad de reestructurar toda la base de datos, facilitando el desarrollo ágil.
+
+Pregunta: ¿Qué implica la falta de transacciones en algunos sistemas NoSQL?
+Respuesta: Que no pueden realizar operaciones complejas en varias colecciones o tablas a la vez, limitando la consistencia en algunas aplicaciones.
+
+Pregunta: ¿Qué empresas utilizan MongoDB y por qué?
+Respuesta: Empresas como Foursquare y eBay la utilizan por su flexibilidad y capacidad para gestionar datos semi-estructurados en grandes volúmenes.
+
+Pregunta: ¿Qué base de datos orientada a columnas es parte del ecosistema Hadoop y quiénes la utilizan?
+Respuesta: HBase, utilizada por empresas como Facebook y Yahoo para procesar grandes cantidades de datos.
+
+Pregunta: ¿Cómo ayuda el escalado horizontal en NoSQL a gestionar grandes cargas de datos?
+Respuesta: Distribuyendo la carga entre varios servidores, lo que permite manejar caídas de servidores individuales sin afectar la disponibilidad de los datos.
+
+Pregunta: ¿Qué tipo de programación se adapta mejor al escalado horizontal de NoSQL?
+Respuesta: La programación iterativa, ya que permite que los cambios en la estructura y en los datos se propaguen de manera más eficiente.
+
+Pregunta: ¿Por qué los datos jerárquicos y complejos presentan dificultades en SQL?
+Respuesta: Porque SQL se basa en una estructura de filas y columnas, lo que no se adapta bien a datos con jerarquías o relaciones múltiples.
+
+Pregunta: ¿Qué tipos de datos son difíciles de representar en SQL pero fáciles en NoSQL?
+Respuesta: Datos complejos, como los objetos y listas de JSON o XML, que pueden tener estructuras anidadas.
+
+Pregunta: ¿Cómo funcionan las bases de datos de grafos?
+Respuesta: Utilizan nodos y aristas para representar relaciones entre datos, útiles para aplicaciones como redes sociales donde hay muchas conexiones entre entidades.
+
+Pregunta: ¿Cuál es una ventaja de las bases de datos de clave-valor?
+Respuesta: Su simplicidad y rapidez en búsquedas directas, ya que se accede a los datos por una clave única.
+
+Pregunta: ¿Qué tipo de base de datos se recomienda para una aplicación de Big Data y por qué?
+Respuesta: NoSQL, debido a su capacidad de gestionar y procesar grandes volúmenes de datos heterogéneos y no estructurados.
+
+Pregunta: ¿Por qué SQL sigue siendo preferido para sistemas empresariales?
+Respuesta: Porque proporciona consistencia y transacciones complejas, características esenciales para mantener integridad y seguridad en datos empresariales.
+
+Pregunta: ¿Cómo ha influido el fenómeno BYOD en el uso de bases de datos NoSQL?
+Respuesta: El fenómeno BYOD implica dispositivos diversos y datos heterogéneos, lo que requiere la flexibilidad que proporciona NoSQL para gestionar datos sin estructura fija.
+
+Pregunta: ¿Qué significa el término XaaS en el contexto de NoSQL?
+Respuesta: "Everything as a Service," o "cualquier cosa como servicio," que se refiere a la adaptabilidad de NoSQL para diferentes necesidades en la nube.

@@ -60,14 +60,42 @@ std::vector<FlashCard> loadFlashcards(const std::string& filename) {
         return flashcards; // Retornar un vector vacío si no se puede abrir el fichero
     }
 
+    std::string line;
     std::string question, answer;
-    while (std::getline(file, question) && std::getline(file, answer)) {
-        flashcards.push_back({question, answer}); // Agregar la flashcard leída al vector
+    bool readingQuestion = true;
+
+    while (std::getline(file, line)) {
+        // Ignorar líneas en blanco
+        if (line.find_first_not_of(" \t") == std::string::npos) {
+            continue; // Saltar si la línea está vacía o solo tiene espacios
+        }
+
+        // Eliminar "Pregunta:" o "Respuesta:" si está al inicio de la línea
+        if (line.find("Pregunta:") == 0) {
+            line.erase(0, std::string("Pregunta:").length());
+        } else if (line.find("Respuesta:") == 0) {
+            line.erase(0, std::string("Respuesta:").length());
+        }
+
+        // Eliminar espacios en blanco al inicio y fin de la línea
+        line = line.substr(line.find_first_not_of(" \t"));
+        line = line.substr(0, line.find_last_not_of(" \t") + 1);
+
+        // Alternar entre leer pregunta y respuesta
+        if (readingQuestion) {
+            question = line;
+            readingQuestion = false;
+        } else {
+            answer = line;
+            flashcards.push_back({question, answer}); // Agregar la flashcard al vector
+            readingQuestion = true;
+        }
     }
 
     file.close(); // Cerrar el fichero
     return flashcards;
 }
+
 
 int main(int argc, char* argv[]) {
     // el primer argumento es el nombre del programa
