@@ -31,6 +31,7 @@ def ramal(I,prev=[],base=0):
         O.append(prev)
   return O
 
+
 def muestra_robot(O,ef=[]):
   # Pinta en 3D
   OR = ramal(O)
@@ -93,33 +94,64 @@ def matriz_T(d,theta,a,alpha):
 
 
 # Introducción de los valores de las articulaciones
-nvar=2 # Número de variables
+nvar=5 # Número de variables
 if len(sys.argv) != nvar+1:
   sys.exit('El número de articulaciones no es el correcto ('+str(nvar)+')')
 p=[float(i) for i in sys.argv[1:nvar+1]]
 
 # Parámetros D-H:
-#        1    2
-d  = [   0,   0]
-th = [p[0],p[1]]
-a  = [  10,   5]
-al = [   0,   0]
+#        1         2       3        4     51         52        ef              
+d  = [  4,         p[1],   2,       0,     0,        0,        0]
+th = [  90+p[0],   0,      p[2],   -90,  45+p[3], -(45+p[3]),  0]
+a  = [  0,         0,      0,      p[3],   1,        1,        1]       
+al = [  90,        0,      0,       90,    0,        0,        0]
+
 
 # Orígenes para cada articulación
 o00=[0,0,0,1]
 o11=[0,0,0,1]
 o22=[0,0,0,1]
+o33=[0,0,0,1]
+o44=[0,0,0,1]
+o5151=[0,0,0,1]
+o5252=[0,0,0,1]
+oefef=[0,0,0,1]
 
 # Cálculo matrices transformación
 T01=matriz_T(d[0],th[0],a[0],al[0])
 T12=matriz_T(d[1],th[1],a[1],al[1])
+T23=matriz_T(d[2],th[2],a[2],al[2])
+T34=matriz_T(d[3],th[3],a[3],al[3])
+T451=matriz_T(d[4],th[4],a[4],al[4])
+T452=matriz_T(d[5],th[5],a[5],al[5])
+T4EF=matriz_T(d[6],th[6],a[6],al[6])
+
+
 T02=np.dot(T01,T12)
+T03=np.dot(T02,T23)
+T04 =np.dot(T03,T34)
+T051=np.dot(T04,T451)
+T052=np.dot(T04,T452)
+T0EF=np.dot(T04,T4EF)
+
+
 
 # Transformación de cada articulación
-o10 =np.dot(T01, o11).tolist()
-o20 =np.dot(T02, o22).tolist()
+o10  =np.dot(T01, o11).tolist()
+o20  =np.dot(T02, o22).tolist()
+o30  =np.dot(T03, o33).tolist()
+o40  =np.dot(T04,o44).tolist()
+o51  =np.dot(T051,o5151).tolist()
+o52  =np.dot(T052,o5252).tolist()
+oef  =np.dot(T0EF,o5252).tolist()
 
 # Mostrar resultado de la cinemática directa
-muestra_origenes([o00,o10,o20])
-muestra_robot   ([o00,o10,o20])
+                              #nuevo
+#muestra_origenes([o00,o10,o20,o30,o40])
+#muestra_robot   ([o00,o10,o20,o30,o40])
+
+muestra_origenes([o00,o10,o20,o30,o40,[[o51],[o52]]],oef) 
+muestra_robot   ([o00,o10,o20,o30,o40,[[o51],[o52]]],oef) 
 input()
+
+#PARA PROBARLO CON LA POSICION INICIAL DEL DIBUJO: python3 manipulador7.py 0 2 0 5 0
