@@ -61,12 +61,12 @@ def cin_dir(th,a):
 # Cálculo de la cinemática inversa de forma iterativa por el método CCD
 
 # valores articulares arbitrarios para la cinemática directa inicial
-th=[0.,0.,0.]
-a =[5.,5.,5.]
+th=[0.,0.,0.] # tita del punto
+a =[5.,5.,5.] # longitud del objeto rígido
 L = sum(a) # variable para representación gráfica
 EPSILON = .01
 
-#plt.ion() # modo interactivo
+plt.ion() # modo interactivo
 
 # introducción del punto para la cinemática inversa
 if len(sys.argv) != 3:
@@ -86,13 +86,21 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
   O=[cin_dir(th,a)]
   # Para cada combinación de articulaciones:
   for i in range(len(th)):
-    # cálculo de la cinemática inversa: En clase se recomendó que usaramos la trigonometría
-    # obtener los 3 puntos ( el EF, ptoFinal(t)  y p actual)
-    # construir triangulo 1 con p y t
-    # construir triangulo 2 con p y EF
-    # hallar alfa 1 
-    # hallar alfa 2
-    # Incremento de tita es alfa 2 - alfa 1
+    # cálculo de la cinemática inversa: 
+    # En clase se recomendó que usaramos la trigonometría
+    
+    #Pseudocódigo:
+    # obtener coordenadas de p
+    # obtener coordenadas de t
+    # obtener coordanadas de EF.
+    # calcular a , siendo a coordenana y de t menos coordenada y de p
+    # calcular b , diendo b coordenada x de t menos coordenada x de p
+    # calcular c , siendo a coordenana y de EF menos coordenada y de p
+    # calcular d , diendo b coordenada x de EF menos coordenada x de p
+    # calcular alfa2 con a/b
+    # calcular alfa1 con c/d 
+    # calcular th actual con alfa2 - alfa1.
+
     O.append(cin_dir(th,a))
 
   dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
