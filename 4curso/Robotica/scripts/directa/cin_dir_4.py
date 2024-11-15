@@ -93,60 +93,72 @@ def matriz_T(d,theta,a,alpha):
 
 
 # Introducción de los valores de las articulaciones
-nvar=5 # Número de variables
+nvar=6 # Número de variables
 if len(sys.argv) != nvar+1:
   sys.exit('El número de articulaciones no es el correcto ('+str(nvar)+')')
 p=[float(i) for i in sys.argv[1:nvar+1]]
 
 # Parámetros D-H:
-#        1  0p 1 2 3 4 41 42 51 52 61 62
-d  = [p[0],   0,    0,    0,    0,    0,     0,   0]
-th = [0,   p[1],    0, -90,  p[3], 90-p[4], 90+p[4],  90]
-a  = [   0,   5, p[2],    0,    0,    2,     2,   2]
-al = [   0,   0,    0,  -90,   90,   90,    90,  90]
+#     0T01 01t1   1t2    2t3     3t4   4t41 41t51  52t62    4t42   42t52 52t62 
+d  = [p[0],  0,     0,     0,     5,     0,     1,  p[5],      0,      1,p[5]]
+th = [   0,  0,  p[1],  p[2],  p[3],     0,     0,     0,      0,      0,   0]
+a  = [   0,  2,     2,     0,     0,  p[4],     0,     0,  -p[4],      0,   0]
+al = [   0,  0,   90,   90,     0,     0,     0,     0,      0,      0,   0]
 
-# Orígenes para cada articulación ( 3 es 2' y el resto se suma 1 hasta el 8 que es EF )
+# Orígenes para cada articulación
 o00=[0,0,0,1]
+o0101=[0,0,0,1]
 o11=[0,0,0,1]
 o22=[0,0,0,1]
 o33=[0,0,0,1]
 o44=[0,0,0,1]
-o55=[0,0,0,1]
-o66=[0,0,0,1]
-o77=[0,0,0,1]
-o88=[0,0,0,1]
+o4141=[0,0,0,1]
+o4242=[0,0,0,1]
+o5151=[0,0,0,1]
+o5252=[0,0,0,1]
+o6161=[0,0,0,1]
+o6262=[0,0,0,1]
 
 # Cálculo matrices transformación
-T01=matriz_T(d[0],th[0],a[0],al[0])
-T12=matriz_T(d[1],th[1],a[1],al[1])
-T23=matriz_T(d[2],th[2],a[2],al[2]) 
-T34=matriz_T(d[3],th[3],a[3],al[3])
-T45=matriz_T(d[4],th[4],a[4],al[4])
-T65=matriz_T(d[5],th[5],a[5],al[5])
-T75=matriz_T(d[6],th[6],a[6],al[6])
-T85=matriz_T(d[7],th[7],a[7],al[7])
+#     0T01 01t1   1t2    2t3     3t4   4t41 41t51  52t62    4t42   42t52 52t62 
+T001=matriz_T(d[0],th[0],a[0],al[0])
+T011=matriz_T(d[1],th[1],a[1],al[1])
+T12=matriz_T(d[2],th[2],a[2],al[2])
+T23=matriz_T(d[3],th[3],a[3],al[3])
+T34=matriz_T(d[4],th[4],a[4],al[4])
+T441=matriz_T(d[5],th[5],a[5],al[5])
+T4151=matriz_T(d[6],th[6],a[6],al[6])
+T5161=matriz_T(d[7],th[7],a[7],al[7])
+T442=matriz_T(d[8],th[8],a[8],al[8])
+T4252=matriz_T(d[9],th[9],a[9],al[9])
+T5262=matriz_T(d[10],th[10],a[10],al[10])
 
-T02=np.dot(T01,T12) 
-T03=np.dot(T02,T23)
-T04=np.dot(T03,T34)
-T05=np.dot(T04,T45)
-T06=np.dot(T05,T65)
-T07=np.dot(T05,T75)
-T08=np.dot(T05,T85)
-
+T01=np.dot(T001 , T011)
+T02=np.dot(T01  , T12)
+T03=np.dot(T02  , T23)
+T04=np.dot(T03  , T34)
+T041=np.dot(T04 , T441)
+T051=np.dot(T041, T4151)
+T061=np.dot(T051, T5161)
+T042=np.dot(T04 , T442)
+T052=np.dot(T042, T4252)
+T062=np.dot(T052, T5262)
 
 # Transformación de cada articulación
-o10 =np.dot(T01, o11).tolist()
-o20 =np.dot(T02, o22).tolist()
-o30 =np.dot(T03, o33).tolist()
-o40 =np.dot(T04, o44).tolist()
-o50 =np.dot(T05, o55).tolist()
-o60 =np.dot(T06, o66).tolist()
-o70 =np.dot(T07, o77).tolist()
-o80 =np.dot(T08, o88).tolist()
+o010=np.dot(T001,o0101).tolist()
+o11=np.dot(T01,o11).tolist()
+o22=np.dot(T02,o22).tolist()
+o33=np.dot(T03,o33).tolist()
+o44=np.dot(T04,o44).tolist()
+o4141=np.dot(T041,o4141).tolist()
+o4242=np.dot(T042,o4242).tolist()
+o5151=np.dot(T051,o5151).tolist()
+o5252=np.dot(T052,o5252).tolist()
+o6161=np.dot(T061,o6161).tolist()
+o6262=np.dot(T062,o6262).tolist()
 
 
-# Mostrar resultado de la cinemática directa, los puntos 510 y 520 van dentro de un array propio
-muestra_origenes([o00,o10,o20,o30,o40,o50,[[o60],[o70]]],o80) 
-muestra_robot   ([o00,o10,o20,o30,o40,o50,[[o60],[o70]]],o80)
+# Mostrar resultado de la cinemática directa
+muestra_origenes([o00,o010,o11,o22,o33,o44,[[o4141,o5151,o6161],[o4242,o5252,o6262]]])
+muestra_robot   ([o00,o010,o11,o22,o33,o44,[[o4141,o5151,o6161],[o4242,o5252,o6262]]])
 input()
