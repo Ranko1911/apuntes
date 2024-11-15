@@ -113,6 +113,7 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
     # hasta aqui
     O.append(cin_dir(th,a))
     # para basico y aprobar hace falta normalizar y tener limite superior e inferior
+    # normalizar el dato es que simpre esté entre pi y -pi
 
   dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
   print ("\n- Iteracion " + str(iteracion) + ':')
