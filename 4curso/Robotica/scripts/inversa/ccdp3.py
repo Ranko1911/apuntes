@@ -6,6 +6,7 @@
 # Práctica: Resolución de la cinemática inversa mediante CCD
 #           (Cyclic Coordinate Descent).
 
+import math
 import sys
 from math import *
 import numpy as np
@@ -64,7 +65,7 @@ def cin_dir(th,a):
 th=[0.,0.,0.] # tita del punto
 a =[5.,5.,5.] # longitud del objeto rígido
 L = sum(a) # variable para representación gráfica
-EPSILON = .01
+EPSILON = .8
 
 #plt.ion() # modo interactivo
 
@@ -86,22 +87,33 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
   O=[cin_dir(th,a)]
   # Para cada combinación de articulaciones:
   for i in range(len(th)):
-    # cálculo de la cinemática inversa: 
+    # cálculo de la cinemática inversa: comprobar desde aqui 
     # En clase se recomendó que usaramos la trigonometría
     
     #Pseudocódigo:
     # obtener coordenadas de p
-    # obtener coordenadas de t -> objetivo
+    p = O[-1][len(th) - i - 1]
+    # obtener coordenadas de t
+    t = objetivo
     # obtener coordanadas de EF.
+    EF = O[-1][-1]
     # calcular a , siendo a coordenana y de t menos coordenada y de p
     # calcular b , diendo b coordenada x de t menos coordenada x de p
+    # calcular alfa2 con a/b
+    # alpha2 = (t[1]-p[1])/(t[0]-p[0])
+    # faltra la arotangaente para sacer el valor del angulo
+    alpha2  = math.atan2(t[1]-p[1],t[0]-p[0])
     # calcular c , siendo a coordenana y de EF menos coordenada y de p
     # calcular d , diendo b coordenada x de EF menos coordenada x de p
-    # calcular alfa2 con a/b
-    # calcular alfa1 con c/d
+    # calcular alfa1 con c/d 
+    # alpha1 = (EF[1]-p[1])/(EF[0]-p[0])
+    alpha1 = math.atan2(EF[1]-p[1],EF[0]-p[0])
     # calcular th actual con alfa2 - alfa1.
-    # Calcular th nuevo con th[i] = th[i] + incremento de tita 
+    th[len(th) - i -1 ] = th[len(th) - i -1] + (alpha2 - alpha1)
+    # hasta aqui
     O.append(cin_dir(th,a))
+    # para basico y aprobar hace falta normalizar y tener limite superior e inferior
+    # normalizar el dato es que simpre esté entre pi y -pi
 
   dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
   print ("\n- Iteracion " + str(iteracion) + ':')
