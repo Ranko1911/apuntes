@@ -72,8 +72,8 @@ MAX_ANGLE = math.pi / 2 # Límite superior (90 grados)
 MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
 MAX_LENGTH = 15
 MIN_LENGTH = 0
-values = [[MAX_ANGLE , MAX_ANGLE       ,math.pi],
-          [MIN_ANGLE , MIN_ANGLE       ,-math.pi],
+values = [[MAX_ANGLE , MAX_ANGLE       ,math.pi   ],
+          [MIN_ANGLE , MIN_ANGLE       ,-math.pi  ],
           [MAX_LENGTH, MAX_LENGTH      ,MAX_LENGTH],
           [MIN_LENGTH, MIN_LENGTH      ,MIN_LENGTH]]
 
