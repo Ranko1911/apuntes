@@ -64,13 +64,18 @@ def cin_dir(th,a):
 # valores articulares arbitrarios para la cinemática directa inicial
 th=[0.,0.,0.] # tita del punto
 a =[5.,5.,5.] # longitud del objeto rígido
-ty=["des","rev","rev"]
+ty=["rev","des","rev"]
 L = sum(a) # variable para representación gráfica
+# modificar para que siempre se vea el robot
 EPSILON = .8
 MAX_ANGLE = math.pi / 2 # Límite superior (90 grados)
 MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
-values = [[MAX_ANGLE, math.pi / 2 / 2 ,MAX_ANGLE],
-          [MIN_ANGLE, MIN_ANGLE       ,MIN_ANGLE]]
+MAX_LENGTH = 15
+MIN_LENGTH = -15
+values = [[MAX_ANGLE , MAX_ANGLE       ,math.pi],
+          [MIN_ANGLE , MIN_ANGLE       ,-math.pi],
+          [MAX_LENGTH, MAX_LENGTH      ,MAX_LENGTH],
+          [MIN_LENGTH, MIN_LENGTH      ,MIN_LENGTH]]
 
 #plt.ion() # modo interactivo
 
@@ -127,17 +132,27 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
           
     if ty[i] == "des":
       #valor de t
-      
+      w = 0
       # la d es el producto escalar entre U y V
       # u es cos (w) y sen(w)
         # la w es el sumatorio de los angulos anteriores y el actual
-      # for j in i:
-      #   w = w + th[i]
+      for j in range(i, len(th)):
+          w += th[j]
+      
+      u = ( math.cos(w), math.sin(w))
       
       # v es (x de t - x de EF, y de t - y de EF)
-      v = math.atan2(t[1]-EF[1],t[0]-EF[0])
-      d = 1 * v
+      v = (t[0]-EF[0],t[1]-EF[1])
+      d = u[0] * v[0] + u[1] * v[1]
       a[len(a) - i - 1] = a[len(a) - i - 1] + d
+      
+      # Restringir la longitud al límite superior
+      if a[len(a) - i - 1] > values[2][i]:
+          a[len(a) - i - 1] = values[2][i]
+
+      # Restringir la longitud al límite superior
+      if a[len(a) - i - 1] < values[3][i]:
+          a[len(a) - i - 1] = values[3][i]
 
     O.append(cin_dir(th,a))
     # para basico y aprobar hace falta normalizar y tener limite superior e inferior
