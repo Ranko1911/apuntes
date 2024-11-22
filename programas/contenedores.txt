@@ -1,0 +1,127 @@
+
+ ¿Qué es un contenedor?
+ Un entorno aislado para ejecutar aplicaciones con su propio sistema operativo, bibliotecas y configuraciones.
+
+
+ ¿Cuál es una ventaja clave de los contenedores?
+ Portabilidad, permitiendo ejecutar aplicaciones en cualquier infraestructura compatible.
+
+
+ ¿Por qué los contenedores ayudan a resolver problemas comunes en desarrollo de software?
+ Evitan problemas de incompatibilidad entre entornos.
+
+
+ Menciona una desventaja de los contenedores.
+ Requieren una curva de aprendizaje para nuevas habilidades y herramientas.
+
+
+ ¿Qué es Docker?
+ Una plataforma de contenedores de código abierto para crear y gestionar contenedores.
+
+
+ ¿Cuáles son componentes clave de Docker?
+ Imágenes, contenedores y Dockerfile.
+ ¿Qué es Kubernetes?
+ Una plataforma de orquestación de contenedores para gestionar despliegues a gran escala.
+
+
+ ¿Qué ventajas ofrece Kubernetes en la gestión de contenedores?
+ Escalado automático, autocuración y balanceo de carga.
+
+
+ ¿Qué es la escalabilidad en contenedores?
+ La capacidad de aumentar o disminuir recursos de manera rápida.
+
+
+ ¿Qué diferencia a Docker y Kubernetes?
+ Docker es ideal para aplicaciones pequeñas; Kubernetes, para despliegues grandes y complejos.
+
+
+ ¿Cómo benefician los contenedores al desarrollo ágil?
+ Facilitan entornos de desarrollo consistentes y aceleran pruebas y despliegues.
+
+
+ ¿Qué es un microservicio?
+ Un pequeño servicio independiente dentro de una arquitectura modular.
+
+
+ ¿Cómo ayudan los contenedores en la arquitectura de microservicios?
+ Permiten empaquetar cada microservicio en un contenedor independiente.
+
+
+ Define CI/CD.
+ Integración Continua y Despliegue Continuo, prácticas para la entrega rápida y confiable de software.
+
+
+ ¿Cómo se usa CI/CD con contenedores?
+ Automatiza pruebas y despliegues, manteniendo consistencia entre entornos.
+
+
+ ¿Qué es la nube híbrida?
+ Combinación de nubes públicas y privadas para mayor flexibilidad.
+
+
+ ¿Qué rol juegan los contenedores en la nube híbrida?
+ Facilitan la portabilidad de aplicaciones entre diferentes entornos de nube.
+
+
+ ¿Qué es Machine Learning?
+ Rama de la IA que permite a las máquinas aprender a partir de datos.
+
+
+ ¿Cómo facilitan los contenedores el despliegue de modelos de Machine Learning?
+ Ofrecen aislamiento y reproducibilidad de experimentos.
+
+
+ ¿Qué es IoT?
+ Internet de las Cosas, que conecta dispositivos físicos a internet para compartir datos.
+
+
+ ¿Cómo se utilizan los contenedores en IoT?
+ Para gestionar aplicaciones en dispositivos IoT y simplificar actualizaciones.
+
+
+ ¿Qué es el cloud gaming?
+ Jugar videojuegos en línea sin necesidad de hardware potente en el dispositivo del usuario.
+
+
+ Menciona un ejemplo fallido de cloud gaming con contenedores.
+ Google Stadia.
+
+ ¿Qué diferencia a los contenedores de las máquinas virtuales en términos de recursos?
+ Los contenedores son más ligeros y utilizan menos recursos.
+
+
+ ¿Cuál es una ventaja de las máquinas virtuales frente a los contenedores?
+ Mayor aislamiento, ya que cada VM opera de forma independiente.
+
+
+ ¿Qué es el Dockerfile?
+ Un archivo que contiene instrucciones para crear una imagen de Docker.
+
+
+ ¿Qué es un "pod" en Kubernetes?
+ La unidad básica de despliegue en Kubernetes, que puede contener uno o más contenedores.
+
+
+ ¿Por qué es importante el balanceo de carga en Kubernetes?
+ Para distribuir de forma equitativa el tráfico entre contenedores.
+
+
+ ¿Cómo impacta el uso de contenedores en la agilidad organizacional?
+ Mejora la eficiencia y rapidez en el despliegue de aplicaciones.
+
+
+ ¿Qué rol juegan los contenedores en la reproducibilidad de experimentos en Machine Learning?
+ Permiten replicar el mismo entorno para obtener resultados consistentes.
+
+ ¿Cuál es la principal diferencia entre contenedores y máquinas virtuales?
+ Los contenedores comparten el núcleo del sistema operativo, mientras que las VMs tienen su propio SO completo.
+
+
+ ¿Qué beneficio trae la densidad de contenedores en servidores?
+ Permite ejecutar más aplicaciones en el mismo hardware.
+
+
+ ¿Qué deben considerar las organizaciones antes de adoptar contenedores?
+ Capacitar al equipo en herramientas de contenedores y evaluar los desafíos de seguridad y orquestación.

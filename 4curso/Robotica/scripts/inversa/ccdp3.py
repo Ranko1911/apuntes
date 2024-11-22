@@ -66,7 +66,7 @@ a =[5.,5.,5.] # longitud del objeto rígido
 L = sum(a) # variable para representación gráfica
 EPSILON = .01
 
-plt.ion() # modo interactivo
+#plt.ion() # modo interactivo
 
 # introducción del punto para la cinemática inversa
 if len(sys.argv) != 3:
@@ -91,16 +91,16 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
     
     #Pseudocódigo:
     # obtener coordenadas de p
-    # obtener coordenadas de t
+    # obtener coordenadas de t -> objetivo
     # obtener coordanadas de EF.
     # calcular a , siendo a coordenana y de t menos coordenada y de p
     # calcular b , diendo b coordenada x de t menos coordenada x de p
     # calcular c , siendo a coordenana y de EF menos coordenada y de p
     # calcular d , diendo b coordenada x de EF menos coordenada x de p
     # calcular alfa2 con a/b
-    # calcular alfa1 con c/d 
+    # calcular alfa1 con c/d
     # calcular th actual con alfa2 - alfa1.
-
+    # Calcular th nuevo con th[i] = th[i] + incremento de tita 
     O.append(cin_dir(th,a))
 
   dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
