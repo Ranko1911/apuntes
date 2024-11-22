@@ -89,7 +89,6 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
   for i in range(len(th)):
     # cálculo de la cinemática inversa: comprobar desde aqui 
     # En clase se recomendó que usaramos la trigonometría
-    
     #Pseudocódigo:
     # obtener coordenadas de p
     p = O[-1][len(th) - i - 1]
@@ -110,7 +109,6 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
     alpha1 = math.atan2(EF[1]-p[1],EF[0]-p[0])
     # calcular th actual con alfa2 - alfa1.
     th[len(th) - i -1 ] = th[len(th) - i -1] + (alpha2 - alpha1)
-    # hasta aqui
     O.append(cin_dir(th,a))
     # para basico y aprobar hace falta normalizar y tener limite superior e inferior
     # normalizar el dato es que simpre esté entre pi y -pi
