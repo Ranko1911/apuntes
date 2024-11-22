@@ -66,6 +66,8 @@ th=[0.,0.,0.] # tita del punto
 a =[5.,5.,5.] # longitud del objeto rígido
 L = sum(a) # variable para representación gráfica
 EPSILON = .8
+MAX_ANGLE = math.pi / 2 # Límite superior (90 grados)
+MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
 
 #plt.ion() # modo interactivo
 
@@ -99,16 +101,26 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
     # calcular a , siendo a coordenana y de t menos coordenada y de p
     # calcular b , diendo b coordenada x de t menos coordenada x de p
     # calcular alfa2 con a/b
-    # alpha2 = (t[1]-p[1])/(t[0]-p[0])
     # faltra la arotangaente para sacer el valor del angulo
     alpha2  = math.atan2(t[1]-p[1],t[0]-p[0])
     # calcular c , siendo a coordenana y de EF menos coordenada y de p
     # calcular d , diendo b coordenada x de EF menos coordenada x de p
     # calcular alfa1 con c/d 
-    # alpha1 = (EF[1]-p[1])/(EF[0]-p[0])
     alpha1 = math.atan2(EF[1]-p[1],EF[0]-p[0])
     # calcular th actual con alfa2 - alfa1.
     th[len(th) - i -1 ] = th[len(th) - i -1] + (alpha2 - alpha1)
+    # hasta aqui
+    # Normalizar el ángulo para que esté entre -pi y pi ( pasar a [0, 2pi) para facilitar el calcuo)
+    th[len(th) - i - 1] = ((th[len(th) - i - 1] + math.pi) % (2 * math.pi)) - math.pi
+    
+    # Restringir el ángulo al límite superior
+    if th[len(th) - i - 1] > MAX_ANGLE:
+        th[len(th) - i - 1] = MAX_ANGLE
+
+    # Restringir el ángulo al límite superior
+    if th[len(th) - i - 1] < MIN_ANGLE:
+        th[len(th) - i - 1] = MIN_ANGLE
+
     O.append(cin_dir(th,a))
     # para basico y aprobar hace falta normalizar y tener limite superior e inferior
     # normalizar el dato es que simpre esté entre pi y -pi
