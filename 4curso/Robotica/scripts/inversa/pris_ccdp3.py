@@ -90,8 +90,11 @@ print ("- Posicion inicial:")
 muestra_origenes(O)
 
 dist = float("inf")
+dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
 prev = 0.
 iteracion = 1
+L += (dist / 8)
+print("DISTANCIA: " + str(dist))
 while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
   prev = dist
   O=[cin_dir(th,a)]
