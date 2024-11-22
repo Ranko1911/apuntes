@@ -71,7 +71,7 @@ EPSILON = .8
 MAX_ANGLE = math.pi / 2 # Límite superior (90 grados)
 MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
 MAX_LENGTH = 15
-MIN_LENGTH = -15
+MIN_LENGTH = 0
 values = [[MAX_ANGLE , MAX_ANGLE       ,math.pi],
           [MIN_ANGLE , MIN_ANGLE       ,-math.pi],
           [MAX_LENGTH, MAX_LENGTH      ,MAX_LENGTH],
@@ -136,7 +136,7 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
       # la d es el producto escalar entre U y V
       # u es cos (w) y sen(w)
         # la w es el sumatorio de los angulos anteriores y el actual
-      for j in range(i, len(th)):
+      for j in range(0, len(th) - i - 1):
           w += th[j]
       
       u = ( math.cos(w), math.sin(w))
