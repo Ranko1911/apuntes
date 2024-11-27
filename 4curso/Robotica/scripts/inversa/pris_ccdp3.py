@@ -64,16 +64,16 @@ def cin_dir(th,a):
 # valores articulares arbitrarios para la cinemática directa inicial
 th=[0.,0.,0.] # tita del punto
 a =[5.,5.,5.] # longitud del objeto rígido
-ty=["rev","des","rev"]
+ty=["rev","des","des"]
 L = sum(a) # variable para representación gráfica
 # modificar para que siempre se vea el robot
 EPSILON = .8
-MAX_ANGLE = math.pi / 2 # Límite superior (90 grados)
+MAX_ANGLE = math.pi / 2    # Límite superior (90 grados)
 MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
 MAX_LENGTH = 15
 MIN_LENGTH = 0
-values = [[MAX_ANGLE , MAX_ANGLE       ,math.pi   ],
-          [MIN_ANGLE , MIN_ANGLE       ,-math.pi  ],
+values = [[math.pi   , MAX_ANGLE       ,MAX_ANGLE   ],
+          [-math.pi  , MIN_ANGLE       ,MIN_ANGLE  ],
           [MAX_LENGTH, MAX_LENGTH      ,MAX_LENGTH],
           [MIN_LENGTH, MIN_LENGTH      ,MIN_LENGTH]]
 
@@ -109,7 +109,7 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
     t = objetivo
     # obtener coordanadas de EF.
     EF = O[-1][-1]
-    if ty[i] == "rev":
+    if ty[len(th) - i - 1] == "rev":
       # calcular a , siendo a coordenana y de t menos coordenada y de p
       # calcular b , diendo b coordenada x de t menos coordenada x de p
       # calcular alfa2 con a/b
@@ -126,20 +126,23 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
       th[len(th) - i - 1] = ((th[len(th) - i - 1] + math.pi) % (2 * math.pi)) - math.pi
       
       # Restringir el ángulo al límite superior
-      if th[len(th) - i - 1] > values[0][i]:
-          th[len(th) - i - 1] = values[0][i]
+      if th[len(th) - i - 1] > values[0][len(th) - i - 1]:
+          th[len(th) - i - 1] = values[0][len(th) - i - 1]
 
       # Restringir el ángulo al límite superior
-      if th[len(th) - i - 1] < values[1][i]:
-          th[len(th) - i - 1] = values[1][i]
+      if th[len(th) - i - 1] < values[1][len(th) - i - 1]:
+          th[len(th) - i - 1] = values[1][len(th) - i - 1]
           
-    if ty[i] == "des":
+    if ty[len(th) - i - 1] == "des":
       #valor de t
       w = 0
       # la d es el producto escalar entre U y V
       # u es cos (w) y sen(w)
         # la w es el sumatorio de los angulos anteriores y el actual
       for j in range(0, len(th) - i - 1):
+          # print("Valor de I:" + str(i))
+          # print("Valor de Oper:" + str(len(th)) + " -" + str(i) + " -1:" + str(len(th) - i - 1))
+          # print("------------------------------------")
           w += th[j]
       
       u = ( math.cos(w), math.sin(w))
@@ -150,12 +153,12 @@ while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
       a[len(a) - i - 1] = a[len(a) - i - 1] + d
       
       # Restringir la longitud al límite superior
-      if a[len(a) - i - 1] > values[2][i]:
-          a[len(a) - i - 1] = values[2][i]
+      if a[len(a) - i - 1] > values[2][len(th) - i - 1]:
+          a[len(a) - i - 1] = values[2][len(th) - i - 1]
 
       # Restringir la longitud al límite superior
-      if a[len(a) - i - 1] < values[3][i]:
-          a[len(a) - i - 1] = values[3][i]
+      if a[len(a) - i - 1] < values[3][len(th) - i - 1]:
+          a[len(a) - i - 1] = values[3][len(th) - i - 1]
 
     O.append(cin_dir(th,a))
     # para basico y aprobar hace falta normalizar y tener limite superior e inferior
