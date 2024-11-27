@@ -3,8 +3,6 @@
 
 # Robótica Computacional - 
 # Grado en Ingeniería Informática (Cuarto)
-# Práctica: Resolución de la cinemática inversa mediante CCD
-#           (Cyclic Coordinate Descent).
 
 import math
 import sys
@@ -64,7 +62,7 @@ def cin_dir(th,a):
 # valores articulares arbitrarios para la cinemática directa inicial
 th=[0.,0.,0.] # tita del punto
 a =[5.,5.,5.] # longitud del objeto rígido
-ty=["rev","des","des"]
+ty=["rev","rev","des"]
 L = sum(a) # variable para representación gráfica
 # modificar para que siempre se vea el robot
 EPSILON = .8
@@ -72,17 +70,18 @@ MAX_ANGLE = math.pi / 2    # Límite superior (90 grados)
 MIN_ANGLE = -(math.pi / 2) # Límite superior (90 grados)
 MAX_LENGTH = 15
 MIN_LENGTH = 0
-values = [[math.pi   , MAX_ANGLE       ,MAX_ANGLE   ],
-          [-math.pi  , MIN_ANGLE       ,MIN_ANGLE  ],
+values = [[ math.pi  , MAX_ANGLE       ,MAX_ANGLE ],
+          [-math.pi  , MIN_ANGLE       ,MIN_ANGLE ],
           [MAX_LENGTH, MAX_LENGTH      ,MAX_LENGTH],
           [MIN_LENGTH, MIN_LENGTH      ,MIN_LENGTH]]
 
 #plt.ion() # modo interactivo
 
 # introducción del punto para la cinemática inversa
-if len(sys.argv) != 3:
-  sys.exit("python " + sys.argv[0] + " x y")
-objetivo=[float(i) for i in sys.argv[1:]]
+if len(sys.argv) != 4:
+  sys.exit("python " + sys.argv[0] + " x y valor de tabla")
+objetivo=[float(i) for i in sys.argv[1:3]]
+valor_tabla=sys.argv[3]
 O=cin_dir(th,a)
 #O=zeros(len(th)+1) # Reservamos estructura en memoria
  # Calculamos la posicion inicial
@@ -93,7 +92,7 @@ dist = float("inf")
 dist = np.linalg.norm(np.subtract(objetivo,O[-1][-1]))
 prev = 0.
 iteracion = 1
-L += (dist / 8)
+L += (dist / float(valor_tabla))
 print("DISTANCIA: " + str(dist))
 while (dist > EPSILON and abs(prev-dist) > EPSILON/100.):
   prev = dist
