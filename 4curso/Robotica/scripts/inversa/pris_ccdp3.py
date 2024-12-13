@@ -79,7 +79,7 @@ values = [[ math.pi  , MAX_ANGLE       ,MAX_ANGLE ],
 
 # introducción del punto para la cinemática inversa
 if len(sys.argv) != 4:
-  sys.exit("python " + sys.argv[0] + " x y valor de tabla")
+  sys.exit("python " + sys.argv[0] + " x y valor_de_tabla")
 objetivo=[float(i) for i in sys.argv[1:3]]
 valor_tabla=sys.argv[3]
 O=cin_dir(th,a)
