@@ -1,10 +1,10 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Robótica Computacional 
-# Grado en Ingeniería Informática (Cuarto)
-# Práctica 5:
-#     Simulación de robots móviles holonómicos y no holonómicos.
+# Robï¿½tica Computacional 
+# Grado en Ingenierï¿½a Informï¿½tica (Cuarto)
+# Prï¿½ctica 5:
+#     Simulaciï¿½n de robots mï¿½viles holonï¿½micos y no holonï¿½micos.
 
 #localizacion.py
 
@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
 # ******************************************************************************
-# Declaración de funciones
+# Declaraciï¿½n de funciones
 
 def distancia(a,b):
   # Distancia entre dos puntos (admite poses)
@@ -32,7 +32,7 @@ def angulo_rel(pose,p):
 def mostrar(objetivos,ideal,trayectoria):
   # Mostrar objetivos y trayectoria:
   #plt.ion() # modo interactivo
-  # Fijar los bordes del gráfico
+  # Fijar los bordes del grï¿½fico
   objT   = np.array(objetivos).T.tolist()
   trayT  = np.array(trayectoria).T.tolist()
   ideT   = np.array(ideal).T.tolist()
@@ -57,10 +57,14 @@ def mostrar(objetivos,ideal,trayectoria):
   plt.clf()
 
 def localizacion(balizas, real, ideal, centro, radio, mostrar=0):
-  # Buscar la localización más probable del robot, a partir de su sistema
-  # sensorial, dentro de una región cuadrada de centro "centro" y lado "2*radio".
+  # Buscar la localizaciï¿½n mï¿½s probable del robot, a partir de su sistema
+  # sensorial, dentro de una regiï¿½n cuadrada de centro "centro" y lado "2*radio".
 
-
+  #valor de incremeto desde radio hasta radio con incremento
+    # sitio el robot ideal
+    # comparar con las balizas 
+    # nos quedamos con la pocision con menor valor
+    # robo ideal donde mejor posicion
 
 
 
@@ -81,17 +85,17 @@ def localizacion(balizas, real, ideal, centro, radio, mostrar=0):
 
 # ******************************************************************************
 
-# Definición del robot:
-P_INICIAL = [0.,4.,0.] # Pose inicial (posición y orientacion)
+# Definiciï¿½n del robot:
+P_INICIAL = [0.,4.,0.] # Pose inicial (posiciï¿½n y orientacion)
 V_LINEAL  = .7         # Velocidad lineal    (m/s)
-V_ANGULAR = 140.       # Velocidad angular   (º/s)
-FPS       = 10.        # Resolución temporal (fps)
+V_ANGULAR = 140.       # Velocidad angular   (ï¿½/s)
+FPS       = 10.        # Resoluciï¿½n temporal (fps)
 
 HOLONOMICO = 1
 GIROPARADO = 0
 LONGITUD   = .2
 
-# Definición de trayectorias:
+# Definiciï¿½n de trayectorias:
 trayectorias = [
     [[1,3]],
     [[0,2],[4,2]],
@@ -100,12 +104,12 @@ trayectorias = [
     [[2+2*sin(.8*pi*i),2+2*cos(.8*pi*i)] for i in range(5)]
     ]
 
-# Definición de los puntos objetivo:
+# Definiciï¿½n de los puntos objetivo:
 if len(sys.argv)<2 or int(sys.argv[1])<0 or int(sys.argv[1])>=len(trayectorias):
   sys.exit(sys.argv[0]+" <indice entre 0 y "+str(len(trayectorias)-1)+">")
 objetivos = trayectorias[int(sys.argv[1])]
 
-# Definición de constantes:
+# Definiciï¿½n de constantes:
 EPSILON = .1                # Umbral de distancia
 V = V_LINEAL/FPS            # Metros por fotograma
 W = V_ANGULAR*pi/(180*FPS)  # Radianes por fotograma
@@ -119,6 +123,7 @@ real.set_noise(.01,.01,.1)  # Ruido lineal / radial / de sensado
 real.set(*P_INICIAL)
 
 random.seed(0)
+# necesito ubicarme primero
 tray_ideal = [ideal.pose()]  # Trayectoria percibida
 tray_real = [real.pose()]     # Trayectoria seguida
 
@@ -148,6 +153,11 @@ for punto in objetivos:
     tray_ideal.append(ideal.pose())
     tray_real.append(real.pose())
     
+    # detectar las diferencias con las balizas respecto al real y al ideal, si la diff es mucha se llama a localizacion
+    # funcion sense
+    # measurement_prob -> compara las dist de mis balias y las del otro robot
+    
+    
     espacio += v
     tiempo  += 1
 
@@ -156,5 +166,5 @@ if len(tray_ideal) > 1000:
 print ("Recorrido: "+str(round(espacio,3))+"m / "+str(tiempo/FPS)+"s")
 print ("Distancia real al objetivo: "+\
     str(round(distancia(tray_real[-1],objetivos[-1]),3))+"m")
-mostrar(objetivos,tray_ideal,tray_real)  # Representación gráfica
+mostrar(objetivos,tray_ideal,tray_real)  # Representaciï¿½n grï¿½fica
 
