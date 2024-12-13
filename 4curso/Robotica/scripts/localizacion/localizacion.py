@@ -130,7 +130,7 @@ tray_real = [real.pose()]     # Trayectoria seguida
 tiempo  = 0.
 espacio = 0.
 #random.seed(0)
-random.seed(datetime.now())
+random.seed(str(datetime.now()))
 for punto in objetivos:
   while distancia(tray_ideal[-1],punto) > EPSILON and len(tray_ideal) <= 1000:
     pose = ideal.pose()
@@ -152,6 +152,16 @@ for punto in objetivos:
       real.move_triciclo(w,v,LONGITUD)
     tray_ideal.append(ideal.pose())
     tray_real.append(real.pose())
+    
+    
+    dist_ideal= ideal.sense(objetivos)
+    
+    diff = real.measurement_prob(dist_ideal, objetivos)
+    
+    if(diff > 0.01):
+      # print('MAL')
+      localizacion(objetivos, real, ideal, 2, 3, 1)
+    
     
     # detectar las diferencias con las balizas respecto al real y al ideal, si la diff es mucha se llama a localizacion
     # funcion sense
