@@ -64,8 +64,8 @@ def localizacion(balizas, real, ideal, centro, radio, mostrar=0):
   mejor_posicion = None
 
   # Iteramos sobre una cuadrícula de posibles posiciones dentro de la región definida
-  for x in np.linspace(centro[0] - radio, centro[0] + radio, 10):
-    for y in np.linspace(centro[1] - radio, centro[1] + radio, 10):
+  for x in np.linspace(centro[0] - radio, centro[0] + radio, 0.001):
+    for y in np.linspace(centro[1] - radio, centro[1] + radio, 0.001):
       for theta in np.linspace(-pi, pi, 10):  # Usamos una resolución de 10 pasos para la orientación
         # Suponemos que el robot está en una nueva posición con la orientación 'theta'
         posicion = np.array([x, y, theta])
@@ -143,7 +143,7 @@ real = robot()
 real.set_noise(.01,.01,.1)  # Ruido lineal / radial / de sensado
 real.set(*P_INICIAL)
 
-random.seed(0)
+# random.seed(0)
 # necesito ubicarme primero
 tray_ideal = [ideal.pose()]  # Trayectoria percibida
 tray_real = [real.pose()]     # Trayectoria seguida
@@ -184,13 +184,11 @@ for punto in objetivos:
     # funcion sense
     # measurement_prob -> compara las dist de mis balias y las del otro robot
     
-    dist_ideal= ideal.sense(objetivos)
-    
-    diff = real.measurement_prob(dist_ideal, objetivos)
+    diff = real.measurement_prob(ideal.sense(objetivos), objetivos)
     
     if(diff > 0.01):
       # print('MAL')
-      localizacion(objetivos, real, ideal, centros, 3, 1)
+      localizacion(objetivos, real, ideal, pose, 2, 0)
     
     
     espacio += v
