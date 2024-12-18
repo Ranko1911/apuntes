@@ -21,7 +21,7 @@ Aquí tienes un guion para abordar esta parte de tu presentación de manera clar
 ---
 
 **3. Implementación de la metodología Scrum**  
-*"Scrum fue la base de nuestro enfoque ágil. Organizamos el trabajo en ciclos cortos llamados *sprints*, con una duración de [inserta duración, e.g., 2 semanas]. Cada sprint incluye las siguientes ceremonias:  
+*"Scrum fue la base de nuestro enfoque ágil. Organizamos el trabajo en ciclos cortos llamados *sprints*, con una duración de 1 semana. Cada sprint incluye las siguientes ceremonias:  
 - **Sprint planning**: para planificar qué tareas se abordarán.  
 - **Daily stand-ups**: reuniones cortas diarias para alinear al equipo.  
 - **Sprint review**: para mostrar los avances realizados al final del sprint.  
