@@ -12,9 +12,15 @@ import sys
 from math import *
 from robot import robot
 import random
-import numpy as np
-import matplotlib.pyplot as plt
-from datetime import datetime
+import numpy as np # type: ignore
+import matplotlib
+import matplotlib.pyplot as plt # type: ignore
+#from datetime import datetime
+import time
+
+# CAMBIO EL METODO DE VISUALIZACIÓN DEBIDO A PROBLEMAS
+matplotlib.use('TkAgg')
+print(matplotlib.get_backend())
 # ******************************************************************************
 # Declaraci�n de funciones
 
@@ -57,33 +63,47 @@ def mostrar(objetivos,ideal,trayectoria):
   plt.clf()
 
 def localizacion(balizas, real, ideal, centro, radio, mostrar=0):
-  # Buscar la localización más probable del robot, a partir de su sistema
-  # sensorial, dentro de una región cuadrada de centro "centro" y lado "2*radio".
-  
-  mejor_puntaje = float('inf')  # Inicializamos el puntaje más bajo posible
-  mejor_posicion = None
+  # Buscar la localizaci�n m�s probable del robot, a partir de su sistema
+  # sensorial, dentro de una regi�n cuadrada de centro "centro" y lado "2*radio".
 
-  # Iteramos sobre una cuadrícula de posibles posiciones dentro de la región definida
-  for x in np.linspace(centro[0] - radio, centro[0] + radio, 0.001):
-    for y in np.linspace(centro[1] - radio, centro[1] + radio, 0.001):
-      for theta in np.linspace(-pi, pi, 10):  # Usamos una resolución de 10 pasos para la orientación
-        # Suponemos que el robot está en una nueva posición con la orientación 'theta'
-        posicion = np.array([x, y, theta])
-        
-        # Calcular la diferencia entre las mediciones de las balizas del robot real y las del robot ideal
-        dist_ideal = ideal.sense(balizas)
-        dist_real = real.sense(balizas)
-        
-        # Calculamos el puntaje como la diferencia entre las mediciones de las balizas
-        puntaje = np.sum(np.square(np.subtract(dist_real, dist_ideal)))
-        
-        # Si encontramos una posición con menor puntaje, la guardamos como la mejor posición
-        if puntaje < mejor_puntaje:
-          mejor_puntaje = puntaje
-          mejor_posicion = posicion
+  # Inicializo las variables
+  PRESITION = 0.1
+  best_pose = []
+  # La función sense calcula la distancia a cada una de las balizas
+  measurement = real.sense(balizas) 
+
+  # DIVIDO MI IMAGEN SEGUN LA PRESICION QUE QUIERA DARLE
+  depth = int(radio / PRESITION) 
+  # CREO UNA MATRIZ DE TAMAÑO 2*depth de la imagen 
+  if mostrar:
+    imagen = [[None] * (2 * depth) for i in range(2 * depth)]
+  best_weight = 1000 # Numero muy grande
   
-  # Actualizamos la posición real del robot con la mejor estimación encontrada
-  real.set(*mejor_posicion)
+  # Calculo el lugar con mejor peso (Mayor probabilidad de localizar el robot)
+  # Recorro la matriz (imagen)
+  for i in range(2 * depth): 
+    for j in range(2 * depth):
+      # Calculo cooredenas de los puntos de la imagen
+      x = centro[0] + (j - depth) * PRESITION 
+      y = centro[1] + (i - depth) * PRESITION
+
+      # Calculo el peso de la posicion
+      ideal.set(x, y, ideal.orientation)
+      peso = ideal.measurement_prob(measurement, balizas) 
+
+      # Busco el mejor peso
+      if peso < best_weight: 
+        best_weight = peso
+        best_pose = ideal.pose()
+      # Guardo el peso para mostrar en la imagen
+      if mostrar:
+        imagen[i][j] = peso
+
+  # Relocalizo ideal a la pose ideal
+  ideal.set(*best_pose)
+
+
+
 
   if mostrar:
     #plt.ion() # modo interactivo
@@ -112,6 +132,11 @@ HOLONOMICO = 1
 GIROPARADO = 0
 LONGITUD   = .2
 
+
+# PARAMETROS A√ëADIDOS
+RADIO = 0.5           # Tamaño de la imagen a tomar en cuenta al relocalizar
+PROB = 0.5            # Umbral de relocalizacion
+
 # Definici�n de trayectorias:
 trayectorias = [
     [[1,3]],
@@ -126,10 +151,6 @@ if len(sys.argv)<2 or int(sys.argv[1])<0 or int(sys.argv[1])>=len(trayectorias):
   sys.exit(sys.argv[0]+" <indice entre 0 y "+str(len(trayectorias)-1)+">")
 objetivos = trayectorias[int(sys.argv[1])]
 
-centros = [2,2] # Completar esto para cada objetivo
-
-
-
 # Definici�n de constantes:
 EPSILON = .1                # Umbral de distancia
 V = V_LINEAL/FPS            # Metros por fotograma
@@ -143,21 +164,20 @@ real = robot()
 real.set_noise(.01,.01,.1)  # Ruido lineal / radial / de sensado
 real.set(*P_INICIAL)
 
-# random.seed(0)
-# necesito ubicarme primero
+#random.seed(0)
 tray_ideal = [ideal.pose()]  # Trayectoria percibida
 tray_real = [real.pose()]     # Trayectoria seguida
-
-# Inicializa la imagen como una matriz de ceros (esto crea una imagen de fondo)
-tamano_imagen = 100  # Ajusta el tamaño de la imagen según la escala de tu mapa
-imagen = np.zeros((tamano_imagen, tamano_imagen))
-
-
 
 tiempo  = 0.
 espacio = 0.
 #random.seed(0)
-random.seed(str(datetime.now()))
+#random.seed(datetime.now())
+random.seed(int(time.time()))
+
+
+# Primera llamada a funcion localizacion
+localizacion(objetivos, real, ideal, ideal.pose(), RADIO, 1)
+
 for punto in objetivos:
   while distancia(tray_ideal[-1],punto) > EPSILON and len(tray_ideal) <= 1000:
     pose = ideal.pose()
@@ -169,6 +189,12 @@ for punto in objetivos:
     if (v > V): v = V
     if (v < 0): v = 0
 
+    # MEDIDAS 
+    measurements = real.sense(objetivos)
+    weightProb = ideal.measurement_prob(measurements, objetivos)
+    if weightProb > PROB: 
+      localizacion(objetivos, real, ideal, ideal.pose(), RADIO)
+
     if HOLONOMICO:
       if GIROPARADO and abs(w) > .01:
         v = 0
@@ -179,17 +205,6 @@ for punto in objetivos:
       real.move_triciclo(w,v,LONGITUD)
     tray_ideal.append(ideal.pose())
     tray_real.append(real.pose())
-    
-    # detectar las diferencias con las balizas respecto al real y al ideal, si la diff es mucha se llama a localizacion
-    # funcion sense
-    # measurement_prob -> compara las dist de mis balias y las del otro robot
-    
-    diff = real.measurement_prob(ideal.sense(objetivos), objetivos)
-    
-    if(diff > 0.01):
-      # print('MAL')
-      localizacion(objetivos, real, ideal, pose, 2, 0)
-    
     
     espacio += v
     tiempo  += 1
