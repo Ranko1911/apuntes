@@ -6,8 +6,8 @@
 # Grado en Ingeniería Informática
 # Asignatura: Robótica Computacional
 # Curso: 4º
-# Práctica 3: Simulación de robots móviles holonómicos y no holonómicos
-# Author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
+# Práctica 3: Simulación de robots móviles
+# Author Ancor Gonzalez Carballo (alu0101327679@ull.edu.es)
 
 # localizacion.py
 
